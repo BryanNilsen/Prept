@@ -1,0 +1,19 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "username": "admin",
+            "email": "admin@admin.com",
+            "password": "admin"
+        }
+    ],
+    "householdMembers":[
+        {
+            "id": 1,
+            "name": "Dad",
+            "dob": "1980-01-01T00:00",
+            "weight": 200,
+            "height": 72
+        }
+    ]
+}
