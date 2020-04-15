@@ -7,7 +7,7 @@ function Login() {
     <>
     <div className="login_container-top">
       <h1 className="logo_login"><img src={logo} alt="checklist" className="logo-lg" /> Prept</h1>
-      <p>your emergency inventory manager</p>
+      <p className="logo_tagline">your emergency inventory manager</p>
       <div className="login_form_container">
         <div className="login_form">
           <h2>Login</h2>
@@ -18,7 +18,7 @@ function Login() {
         </div>
     </div>
     <p>not registered?</p>
-    <h4>Create New Account</h4>
+    <h4 className="login_create_link">Create New Account</h4>
     </>
   );
 }

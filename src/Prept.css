@@ -1,8 +1,11 @@
 :root {
   --primary-color: #186e83;
+  /* --primary-color: #225990; */
   --primary-white: #ffffff;
   --prept-pink: #c4236d;
   --light-gray: #f0f0f0;
+  --font-gray: #606060;
+  --logo-shadow: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
 }
 
 body {
@@ -13,6 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-gray);
+  color: var(--font-gray);
 }
 
 code {
@@ -24,16 +28,25 @@ code {
   text-align: center;
 }
 
+/* BEGIN PREPT LOGO STYLE */
 .logo_login {
-  font-size: 3em;
-  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+  margin-bottom: 0;
+  font-size: 3.5em;
+  filter: var(--logo-shadow);
+}
+
+.logo_tagline {
+  margin-top: 0.5em;
+  filter: var(--logo-shadow);
 }
 
 .logo-lg {
-  width: 50px;
+  width: 60px;
 }
 
-/* Login */
+/* END PREPT LOGO */
+
+/* BEGIN LOGIN STYLE */
 .login_container-top {
   padding: 1em;
   background-color: var(--primary-color);
@@ -71,6 +84,18 @@ code {
   margin: 0.4em;
 }
 
+.login_create_link {
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+.login_create_link:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+/* END LOGIN STYLE */
+
+/* BUTTONS */
+
 .btn-pink {
   border-radius: 10px;
   border: none;
@@ -78,6 +103,7 @@ code {
   color: var(--primary-white);
 }
 
+/* CREDITS */
 .icon-credits {
   text-align: center;
   font-size: 0.5em;
