@@ -77,3 +77,9 @@ code {
   background-color: var(--prept-pink);
   color: var(--primary-white);
 }
+
+.icon-credits {
+  text-align: center;
+  font-size: 0.5em;
+  color: var(--primary-color);
+}
