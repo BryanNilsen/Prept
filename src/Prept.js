@@ -1,16 +1,13 @@
-import React from 'react';
-import './Prept.css';
-import Water from './components/water/Water';
-import Login from './components/login/Login';
+import React from "react";
+import "./Prept.css";
+import AppViews from "./components/AppViews";
 
-function App() {
-
+function Prept() {
   return (
     <div className="App">
-      <Login />
-      <Water />
+      <AppViews />
     </div>
   );
 }
 
-export default App;
+export default Prept;

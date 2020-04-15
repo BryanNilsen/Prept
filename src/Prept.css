@@ -52,8 +52,10 @@ code {
   padding: 1em;
   background-color: var(--primary-color);
   color: var(--primary-white);
+  /* light-gray bg image that runs behind login form */
   background-image: url("/light-gray.png");
-  background-size: 100% 30px;
+  /* - adjust second property on bg-size to increase/decrease height */
+  background-size: 100% 45px;
   background-position: bottom;
   background-repeat: no-repeat;
 }
@@ -118,6 +120,8 @@ code {
   border-radius: 10px;
   border: none;
   background-color: var(--prept-pink);
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--primary-white);
 }
 
