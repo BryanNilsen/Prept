@@ -10,6 +10,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -76,12 +77,21 @@ code {
   color: var(--prept-pink);
 }
 
-.login_form input {
+.login_inputs {
   border-radius: 10px;
-  border: none;
   background-color: var(--light-gray);
   padding: 0.2em 0.5em;
   margin: 0.4em;
+}
+
+.login_inputs input {
+  border: none;
+  background-color: var(--light-gray);
+}
+
+.input_icon {
+  width: 12px;
+  margin-right: 0.6em;
 }
 
 .login_create_link {
@@ -92,11 +102,19 @@ code {
   opacity: 1;
   cursor: pointer;
 }
+
+.forgot_pwd {
+  text-align: right;
+  font-size: 0.6em;
+  margin-top: 0.2em;
+  color: var(--font-gray);
+}
 /* END LOGIN STYLE */
 
 /* BUTTONS */
 
 .btn-pink {
+  margin: 1em 0.5em;
   border-radius: 10px;
   border: none;
   background-color: var(--prept-pink);
@@ -107,5 +125,4 @@ code {
 .icon-credits {
   text-align: center;
   font-size: 0.5em;
-  color: var(--primary-color);
 }

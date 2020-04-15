@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../../images/logo.svg'
+import email from '../../images/email.png'
+import key from '../../images/key.png'
 
 function Login() {
 
@@ -11,8 +13,15 @@ function Login() {
       <div className="login_form_container">
         <div className="login_form">
           <h2>Login</h2>
-          <input type="text" placeholder="email" />
-          <input type="text" placeholder="password" />
+          <div className="login_inputs">
+            <img src={email} alt="email" className="input_icon"/>
+            <input type="text" placeholder="email"/>
+          </div>
+          <div className="login_inputs">
+            <img src={key} alt="password" className="input_icon"/>
+            <input type="text" placeholder="password" />
+          </div>
+          <p className="forgot_pwd">forgot password?</p>
           <button className="btn-pink">login</button>
           </div>
         </div>
