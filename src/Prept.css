@@ -1,0 +1,79 @@
+:root {
+  --primary-color: #186e83;
+  --primary-white: #ffffff;
+  --prept-pink: #c4236d;
+  --light-gray: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  text-align: center;
+}
+
+.logo_login {
+  font-size: 3em;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+}
+
+.logo-lg {
+  width: 50px;
+}
+
+/* Login */
+.login_container-top {
+  padding: 1em;
+  background-color: var(--primary-color);
+  color: var(--primary-white);
+  background-image: url("/light-gray.png");
+  background-size: 100% 30px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.login_form_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--primary-white);
+  padding: 0.5em;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.login_form > h2 {
+  margin-top: 0;
+  color: var(--prept-pink);
+}
+
+.login_form input {
+  border-radius: 10px;
+  border: none;
+  background-color: var(--light-gray);
+  padding: 0.2em 0.5em;
+  margin: 0.4em;
+}
+
+.btn-pink {
+  border-radius: 10px;
+  border: none;
+  background-color: var(--prept-pink);
+  color: var(--primary-white);
+}
