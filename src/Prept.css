@@ -25,10 +25,6 @@ code {
     monospace;
 }
 
-.App {
-  text-align: center;
-}
-
 /* BEGIN PREPT LOGO STYLE */
 .logo_login {
   margin-bottom: 0;
@@ -46,6 +42,39 @@ code {
 }
 
 /* END PREPT LOGO */
+
+/* BEGIN NAVBAR STYLE */
+nav {
+  background-color: var(--primary-color);
+  padding: 0.5em;
+  display: flex;
+}
+
+.navlinks {
+  display: flex;
+  width: 60%;
+  justify-content: space-evenly;
+  margin: 0;
+  align-items: center;
+}
+.navlinks li {
+  color: var(--primary-white);
+  list-style: none;
+  margin: 0;
+}
+
+.logo_nav {
+  color: var(--primary-white);
+  margin: 0;
+  font-size: 1.8em;
+  filter: var(--logo-shadow);
+}
+
+.logo-sm {
+  width: 30px;
+}
+
+/* END NAVBAR STYLE */
 
 /* BEGIN LOGIN STYLE */
 .login_container-top {
@@ -129,4 +158,10 @@ code {
 .icon-credits {
   text-align: center;
   font-size: 0.5em;
+}
+
+/* HELPERS */
+
+.center {
+  text-align: center;
 }

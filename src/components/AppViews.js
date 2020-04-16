@@ -4,7 +4,10 @@ import Home from "./home/Home";
 import Login from "./login/Login";
 import Water from "./water/Water";
 
-const AppViews = () => {
+const AppViews = props => {
+  const setIsAuthenticated = props.setIsAuthenticated;
+  const isAuthenticated = props.isAuthenticated;
+
   return (
     <React.Fragment>
       <Route
@@ -15,9 +18,22 @@ const AppViews = () => {
         }}
       />
       <Route
+        exact
+        path="/water"
+        render={props => {
+          return <Water />;
+        }}
+      />
+      <Route
         path="/login"
         render={props => {
-          return <Login />;
+          return (
+            <Login
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+              {...props}
+            />
+          );
         }}
       />
     </React.Fragment>

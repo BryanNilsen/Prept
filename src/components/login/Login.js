@@ -1,34 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/logo.svg";
 import email from "../../images/email.png";
 import key from "../../images/key.png";
 
-function Login() {
+function Login(props) {
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+
+  // Update state whenever an input field is edited
+  const handleFieldChange = evt => {
+    const stateToChange = { ...credentials };
+    stateToChange[evt.target.id] = evt.target.value;
+    setCredentials(stateToChange);
+  };
+
+  const handleLogin = e => {
+    e.preventDefault();
+    console.log("FORM ACTION");
+    sessionStorage.setItem("credentials", JSON.stringify(credentials));
+    props.setIsAuthenticated(true);
+    props.history.push("/");
+  };
+
   return (
     <>
-      <div className="login_container-top">
+      <div className="login_container-top center">
         <h1 className="logo_login">
-          <img src={logo} alt="checklist" className="logo-lg" /> Prept
+          <img src={logo} alt="checklist" className="logo-lg" />Prept
         </h1>
         <p className="logo_tagline">your emergency inventory manager</p>
         <div className="login_form_container">
-          <div className="login_form">
+          <form className="login_form">
             <h2>Login</h2>
             <div className="login_inputs">
               <img src={email} alt="email" className="input_icon" />
-              <input type="text" placeholder="email" />
+              <input
+                type="email"
+                id="email"
+                placeholder="email"
+                onChange={handleFieldChange}
+                required
+              />
             </div>
             <div className="login_inputs">
               <img src={key} alt="password" className="input_icon" />
-              <input type="password" placeholder="password" />
+              <input
+                id="password"
+                type="password"
+                placeholder="password"
+                onChange={handleFieldChange}
+                required
+              />
             </div>
             <p className="forgot_pwd">forgot password?</p>
-            <button className="btn-pink">login</button>
-          </div>
+            <button type="submit" className="btn-pink" onClick={handleLogin}>
+              login
+            </button>
+          </form>
         </div>
       </div>
-      <p>not registered?</p>
-      <h4 className="login_create_link">Create New Account</h4>
+      <div className="center">
+        <p>not registered?</p>
+        <h4 className="login_create_link">Create New Account</h4>
+      </div>
     </>
   );
 }
