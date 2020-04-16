@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./home/Home";
 import Login from "./login/Login";
 import Water from "./water/Water";
+import Food from "./food/Food";
 
 const AppViews = props => {
   const setIsAuthenticated = props.setIsAuthenticated;
@@ -22,6 +23,13 @@ const AppViews = props => {
         path="/water"
         render={props => {
           return <Water />;
+        }}
+      />
+      <Route
+        exact
+        path="/food"
+        render={props => {
+          return <Food />;
         }}
       />
       <Route

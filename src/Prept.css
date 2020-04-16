@@ -127,10 +127,9 @@ nav {
 
 .login_create_link {
   color: var(--primary-color);
-  opacity: 0.7;
 }
 .login_create_link:hover {
-  opacity: 1;
+  color: var(--prept-pink);
   cursor: pointer;
 }
 

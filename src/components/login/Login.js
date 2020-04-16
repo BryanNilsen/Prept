@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../images/logo.svg";
 import email from "../../images/email.png";
 import key from "../../images/key.png";
+import APIManager from "../../modules/APIManager"
 
 function Login(props) {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -15,11 +16,23 @@ function Login(props) {
 
   const handleLogin = e => {
     e.preventDefault();
-    console.log("FORM ACTION");
+    findUserFromLogin()
+    .then(result => {
+      console.log(result)
+      if( result.length > 0){
+        console.log("We have a user", result[0].username)
+        sessionStorage.setItem("userId", result[0].id);
+      }
+    });
     sessionStorage.setItem("credentials", JSON.stringify(credentials));
     props.setIsAuthenticated(true);
     props.history.push("/");
   };
+
+  const findUserFromLogin = ()=>{
+    return APIManager.getUserByEmail(credentials.email, credentials.password)
+  }
+
 
   return (
     <>

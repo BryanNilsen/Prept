@@ -1,33 +1,42 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "username": "admin",
-            "email": "admin@admin.com",
-            "password": "admin"
-        }
-    ],
-    "householdMembers":[
-        {
-            "id": 1,
-            "name": "Dad",
-            "dob": "1980-01-01T00:00",
-            "weight": 200,
-            "height": 72
-        },
-        {
-            "id": 2,
-            "name": "Mom",
-            "dob": "1980-02-02T00:00",
-            "weight": 100,
-            "height": 60
-        },
-        {
-            "id": 3,
-            "name": "Son",
-            "dob": "2010-02-02T00:00",
-            "weight": 65,
-            "height": 54
-        }
-    ]
+  "users": [
+    {
+      "id": 0,
+      "username": "admin",
+      "email": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "id": 1,
+      "username": "bryan",
+      "email": "bryan@bryan.com",
+      "password": "bryan"
+    }
+  ],
+  "householdMembers": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Dad",
+      "dob": "1980-01-01T00:00",
+      "weight": 200,
+      "height": 72
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Mom",
+      "dob": "1980-02-02T00:00",
+      "weight": 100,
+      "height": 60
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "Son",
+      "dob": "2010-02-02T00:00",
+      "weight": 65,
+      "height": 54
+    }
+  ]
 }

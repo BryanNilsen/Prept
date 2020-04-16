@@ -3,7 +3,7 @@ import React from "react";
 const Credits = () => {
   return (
     <div>
-      <p class="icon-credits">
+      <p className="icon-credits">
         Clipboard Icon made by
         <a
           href="https://www.flaticon.com/authors/kiranshastry"
