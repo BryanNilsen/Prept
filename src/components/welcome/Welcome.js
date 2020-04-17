@@ -6,7 +6,7 @@ import food_icon from "../../images/grocery.png";
 import supplies_icon from "../../images/supplies.png";
 
 function Welcome() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({householdMembers: []})
 
   useEffect(() => {
     const userId = sessionStorage.getItem("userId")
@@ -18,11 +18,11 @@ function Welcome() {
   return (
     <>
     <div className="main_content">
-  <h1>Welcome, {user.username}</h1>
+      <h1>Welcome, {user.username}</h1>
       <h3>Let's Get Prept in 4 Simple Steps ...</h3>
 
       {/* begin inventory cards */}
-      <section id="household_card" className="card welcome_card">
+      <section id="household_card" className={user.householdMembers.length > 0 ? "card welcome_card complete" : "card welcome_card"}>
         <h3>1</h3>
         <p>Add your household members and some basic info about them so Prept can estimate their daily water and caloric needs.</p>
         <div className="welcome_card_right">

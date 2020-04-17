@@ -46,5 +46,21 @@
       "weight": 65,
       "height": 54
     }
+  ],
+  "waters": [
+    {
+      "id": 0,
+      "userId": 1,
+      "name": "Aquafina",
+      "qty": 32,
+      "oz": 12
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "La Croix - Lemon",
+      "qty": 15,
+      "oz": 12
+    }
   ]
 }

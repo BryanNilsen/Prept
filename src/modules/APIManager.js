@@ -10,7 +10,7 @@ const APIManager = {
     .then(response => response.json())
   },
   getUserWithAllData(id){
-    return fetch(`${APIUrl}/users/${id}?_embed=householdMembers`)
+    return fetch(`${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters`)
     .then(response => response.json())
   },
   getUserByEmail(email, password){

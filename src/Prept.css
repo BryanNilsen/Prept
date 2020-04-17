@@ -281,6 +281,10 @@ button.delete {
   min-width: 130px;
 }
 
+.complete {
+  border: 2px solid red;
+}
+
 /* END WELCOME CONTENT */
 
 /* BEGIN HOUSEHOLD CONTENT */
