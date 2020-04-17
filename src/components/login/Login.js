@@ -6,14 +6,19 @@ import APIManager from "../../modules/APIManager"
 
 function Login(props) {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  
+  const findUserFromLogin = ()=>{
+    return APIManager.getUserByEmail(credentials.email, credentials.password)
+  }
 
+  // EVENT HANDLERS
   // Update state whenever an input field is edited
   const handleFieldChange = evt => {
     const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-
+  // Check for matching email/password and set userId to sessionStorage
   const handleLogin = e => {
     e.preventDefault();
     findUserFromLogin()
@@ -22,16 +27,12 @@ function Login(props) {
       if( result.length > 0){
         console.log("We have a user", result[0].username)
         sessionStorage.setItem("userId", result[0].id);
+        props.setIsAuthenticated(true);
+        props.history.push("/");
       }
     });
-    sessionStorage.setItem("credentials", JSON.stringify(credentials));
-    props.setIsAuthenticated(true);
-    props.history.push("/");
   };
 
-  const findUserFromLogin = ()=>{
-    return APIManager.getUserByEmail(credentials.email, credentials.password)
-  }
 
 
   return (

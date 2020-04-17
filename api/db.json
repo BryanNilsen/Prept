@@ -15,6 +15,14 @@
   ],
   "householdMembers": [
     {
+      "id": 0,
+      "userId": 1,
+      "name": "Bryan",
+      "dob": "1980-01-01T00:00",
+      "weight": 200,
+      "height": 72
+    },
+    {
       "id": 1,
       "userId": 1,
       "name": "Dad",

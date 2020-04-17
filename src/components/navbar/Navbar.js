@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 
 const Navbar = (props) => {
   const handleLogout = () => {
-    sessionStorage.removeItem("credentials");
+    sessionStorage.removeItem("userId");
     props.setIsAuthenticated(false);
     props.history.push("/login");
   };

@@ -28,7 +28,7 @@ const Credits = () => {
           {" "}
           www.flaticon.com
         </a>
-        Key Icon made by
+        Key / Household / Water Bottle Icons made by
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
           Freepik
         </a>
@@ -37,6 +37,7 @@ const Credits = () => {
           {" "}
           www.flaticon.com
         </a>
+        <div>Food / Supplies Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
       </p>
     </div>
   );

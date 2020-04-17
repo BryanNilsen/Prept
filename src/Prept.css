@@ -5,6 +5,9 @@
   --prept-pink: #c4236d;
   --light-gray: #f0f0f0;
   --font-gray: #606060;
+  --font-gray-dark: #707070;
+  --primary-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  --secondary-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   --logo-shadow: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
 }
 
@@ -100,7 +103,7 @@ nav {
   border-radius: 10px;
   background-color: var(--primary-white);
   padding: 0.5em;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--primary-shadow);
 }
 
 .login_form > h2 {
@@ -163,4 +166,54 @@ nav {
 
 .center {
   text-align: center;
+}
+
+/* MAIN CONTENT */
+.main_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_content {
+  max-width: 800px;
+  min-width: 350px;
+  align-self: center;
+  padding: 1rem;
+}
+
+.main_content h1 {
+  color: var(--font-gray-dark);
+}
+
+.main_content h3 {
+  color: var(--prept-pink);
+}
+
+/* BEGIN WELCOME CONTENT */
+.welcome_title {
+  margin-left: 1rem;
+}
+
+.welcome_card {
+  border-radius: 0.5rem;
+  display: flex;
+  background-color: var(--primary-white);
+  padding: 1em 1em 0 1em;
+  box-shadow: var(--secondary-shadow);
+  margin-bottom: 1em;
+}
+.welcome_card:hover {
+  box-shadow: var(--primary-shadow);
+}
+
+.welcome_card p {
+  padding: 0 1em;
+}
+.welcome_card img {
+  width: 60px;
+}
+
+.welcome_card_right {
+  text-align: center;
+  min-width: 130px;
 }

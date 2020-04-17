@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./home/Home";
 import Login from "./login/Login";
 import Water from "./water/Water";
+import Welcome from "./welcome/Welcome";
 import Food from "./food/Food";
 
 const AppViews = props => {
@@ -14,23 +15,30 @@ const AppViews = props => {
       <Route
         exact
         path="/"
-        render={props => {
-          return <Home />;
-        }}
+        render={props => 
+          !isAuthenticated ? (props.history.replace("/login")) :  <Home />
+        }
       />
       <Route
         exact
         path="/water"
-        render={props => {
-          return <Water />;
-        }}
+        render={props =>
+          !isAuthenticated ? (props.history.replace("/login")) :  <Water />
+        }
       />
       <Route
         exact
         path="/food"
-        render={props => {
-          return <Food />;
-        }}
+        render={props => 
+          !isAuthenticated ? (props.history.replace("/login")) :  <Food />
+        }
+      />
+      <Route
+        exact
+        path="/welcome"
+        render={props => 
+          !isAuthenticated ? (props.history.replace("/login")) :  <Welcome />
+        }
       />
       <Route
         path="/login"
