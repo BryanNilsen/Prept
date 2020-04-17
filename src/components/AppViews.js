@@ -1,6 +1,7 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+import Household from "./household/Household";
 import Login from "./login/Login";
 import Water from "./water/Water";
 import Welcome from "./welcome/Welcome";
@@ -38,6 +39,13 @@ const AppViews = props => {
         path="/welcome"
         render={props => 
           !isAuthenticated ? (props.history.replace("/login")) :  <Welcome />
+        }
+      />
+      <Route
+        exact
+        path="/household"
+        render={props => 
+          !isAuthenticated ? (props.history.replace("/login")) :  <Household />
         }
       />
       <Route

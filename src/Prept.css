@@ -6,9 +6,10 @@
   --light-gray: #f0f0f0;
   --font-gray: #606060;
   --font-gray-dark: #707070;
-  --primary-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  --primary-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
   --secondary-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   --logo-shadow: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+  --btn-green: #3e864d;
 }
 
 body {
@@ -154,6 +155,12 @@ nav {
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--primary-white);
+  transition: 0.1s ease-in-out;
+}
+
+.btn-pink:hover {
+  box-shadow: var(--primary-shadow);
+  transform: translateY(-1px);
 }
 
 /* CREDITS */
@@ -183,27 +190,83 @@ nav {
 
 .main_content h1 {
   color: var(--font-gray-dark);
+  margin: 0.5rem 0;
 }
 
 .main_content h3 {
   color: var(--prept-pink);
 }
 
-/* BEGIN WELCOME CONTENT */
-.welcome_title {
-  margin-left: 1rem;
+.main_content_header {
+  display: flex;
 }
 
-.welcome_card {
+.imgwrap {
+  width: 70px;
+}
+
+.main_header_img {
+  width: 60px;
+}
+
+/* BEGIN GENERIC CARD PROPERTIES*/
+.card {
   border-radius: 0.5rem;
   display: flex;
   background-color: var(--primary-white);
-  padding: 1em 1em 0 1em;
+  padding: 1em;
   box-shadow: var(--secondary-shadow);
   margin-bottom: 1em;
+  transition: 0.1s ease-in-out;
 }
-.welcome_card:hover {
+.card:hover {
   box-shadow: var(--primary-shadow);
+  transform: translateY(-2px);
+}
+
+.card_title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.card_status {
+  display: flex;
+  margin: 0.5em 0;
+  align-items: center;
+}
+
+.edit-delete_btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.edit-delete_btns button {
+  border: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  color: var(--primary-white);
+  border-radius: 5px;
+}
+
+.edit-delete_btns button:hover {
+  opacity: 1;
+}
+
+button.edit {
+  background-color: var(--btn-green);
+}
+button.delete {
+  background-color: var(--prept-pink);
+}
+
+/* END GENERIC CARD PROPERTIES */
+
+/* BEGIN WELCOME CONTENT */
+
+.welcome_card {
+  flex-direction: row;
 }
 
 .welcome_card p {
@@ -216,4 +279,17 @@ nav {
 .welcome_card_right {
   text-align: center;
   min-width: 130px;
+}
+
+/* END WELCOME CONTENT */
+
+/* BEGIN HOUSEHOLD CONTENT */
+.household_card {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.household_card img {
+  width: 25px;
+  margin-right: 0.5rem;
 }

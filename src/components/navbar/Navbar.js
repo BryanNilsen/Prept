@@ -10,7 +10,7 @@ const Navbar = (props) => {
   };
   return (
     <nav>        
-      <h1 className="logo_nav"><img src={logo} alt="checklist" className="logo-sm" />Prept</h1>
+      <NavLink to="/welcome"><h1 className="logo_nav"><img src={logo} alt="checklist" className="logo-sm" />Prept</h1></NavLink>
       <div className="navlinks">
       <NavLink to="/household">Household</NavLink>
       <NavLink to="/food">Food</NavLink>

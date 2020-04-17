@@ -28,7 +28,7 @@ function Login(props) {
         console.log("We have a user", result[0].username)
         sessionStorage.setItem("userId", result[0].id);
         props.setIsAuthenticated(true);
-        props.history.push("/");
+        props.history.push("/welcome");
       }
     });
   };

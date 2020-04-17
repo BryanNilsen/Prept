@@ -2,8 +2,8 @@ import React from "react";
 
 const Credits = () => {
   return (
-    <div>
-      <p className="icon-credits">
+    <div className="icon-credits">
+      <p>
         Clipboard Icon made by
         <a
           href="https://www.flaticon.com/authors/kiranshastry"
@@ -16,6 +16,8 @@ const Credits = () => {
           {" "}
           www.flaticon.com
         </a>
+        </p>
+        <p>
         Mail Icon made by
         <a
           href="https://www.flaticon.com/authors/those-icons"
@@ -28,6 +30,8 @@ const Credits = () => {
           {" "}
           www.flaticon.com
         </a>
+        </p>
+        <p>
         Key / Household / Water Bottle Icons made by
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
           Freepik
@@ -37,7 +41,9 @@ const Credits = () => {
           {" "}
           www.flaticon.com
         </a>
-        <div>Food / Supplies Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </p>
+        <p>
+        Food / Supplies Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
       </p>
     </div>
   );

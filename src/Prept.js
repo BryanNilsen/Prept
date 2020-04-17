@@ -17,7 +17,7 @@ function Prept() {
   }, []);
 
   return (
-    <div class="main_container">
+    <div className="main_container">
       {isAuthenticated && <Navbar setIsAuthenticated={setIsAuthenticated} />}
       <AppViews
         isAuthenticated={isAuthenticated}
