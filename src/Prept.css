@@ -1,18 +1,27 @@
 :root {
   --primary-color: #186e83;
+  /* --primary-color: #225990; */
   --primary-white: #ffffff;
   --prept-pink: #c4236d;
   --light-gray: #f0f0f0;
+  --font-gray: #606060;
+  --font-gray-dark: #707070;
+  --primary-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  --secondary-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  --logo-shadow: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+  --btn-green: #3e864d;
 }
 
 body {
   margin: 0;
+  padding: 0;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-gray);
+  color: var(--font-gray);
 }
 
 code {
@@ -20,26 +29,66 @@ code {
     monospace;
 }
 
-.App {
-  text-align: center;
+/* BEGIN PREPT LOGO STYLE */
+.logo_login {
+  margin-bottom: 0;
+  font-size: 3.5em;
+  filter: var(--logo-shadow);
 }
 
-.logo_login {
-  font-size: 3em;
-  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.5));
+.logo_tagline {
+  margin-top: 0.5em;
+  filter: var(--logo-shadow);
 }
 
 .logo-lg {
-  width: 50px;
+  width: 60px;
 }
 
-/* Login */
+/* END PREPT LOGO */
+
+/* BEGIN NAVBAR STYLE */
+nav {
+  background-color: var(--primary-color);
+  padding: 0.5em;
+  display: flex;
+}
+
+.navlinks {
+  display: flex;
+  width: 60%;
+  justify-content: space-evenly;
+  margin: 0;
+  align-items: center;
+}
+.navlinks li {
+  color: var(--primary-white);
+  list-style: none;
+  margin: 0;
+}
+
+.logo_nav {
+  color: var(--primary-white);
+  margin: 0;
+  font-size: 1.8em;
+  filter: var(--logo-shadow);
+}
+
+.logo-sm {
+  width: 30px;
+}
+
+/* END NAVBAR STYLE */
+
+/* BEGIN LOGIN STYLE */
 .login_container-top {
   padding: 1em;
   background-color: var(--primary-color);
   color: var(--primary-white);
+  /* light-gray bg image that runs behind login form */
   background-image: url("/light-gray.png");
-  background-size: 100% 30px;
+  /* - adjust second property on bg-size to increase/decrease height */
+  background-size: 100% 45px;
   background-position: bottom;
   background-repeat: no-repeat;
 }
@@ -55,7 +104,7 @@ code {
   border-radius: 10px;
   background-color: var(--primary-white);
   padding: 0.5em;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--primary-shadow);
 }
 
 .login_form > h2 {
@@ -63,17 +112,188 @@ code {
   color: var(--prept-pink);
 }
 
-.login_form input {
+.login_inputs {
   border-radius: 10px;
-  border: none;
   background-color: var(--light-gray);
   padding: 0.2em 0.5em;
   margin: 0.4em;
 }
 
+.login_inputs input {
+  border: none;
+  background-color: var(--light-gray);
+}
+
+.input_icon {
+  width: 12px;
+  margin-right: 0.6em;
+}
+
+.login_create_link {
+  color: var(--primary-color);
+}
+.login_create_link:hover {
+  color: var(--prept-pink);
+  cursor: pointer;
+}
+
+.forgot_pwd {
+  text-align: right;
+  font-size: 0.6em;
+  margin-top: 0.2em;
+  color: var(--font-gray);
+}
+/* END LOGIN STYLE */
+
+/* BUTTONS */
+
 .btn-pink {
+  margin: 1em 0.5em;
   border-radius: 10px;
   border: none;
   background-color: var(--prept-pink);
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--primary-white);
+  transition: 0.1s ease-in-out;
+}
+
+.btn-pink:hover {
+  box-shadow: var(--primary-shadow);
+  transform: translateY(-1px);
+}
+
+/* CREDITS */
+.icon-credits {
+  text-align: center;
+  font-size: 0.5em;
+}
+
+/* HELPERS */
+
+.center {
+  text-align: center;
+}
+
+/* MAIN CONTENT */
+.main_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_content {
+  max-width: 800px;
+  min-width: 350px;
+  align-self: center;
+  padding: 1rem;
+}
+
+.main_content h1 {
+  color: var(--font-gray-dark);
+  margin: 0.5rem 0;
+}
+
+.main_content h3 {
+  color: var(--prept-pink);
+}
+
+.main_content_header {
+  display: flex;
+}
+
+.imgwrap {
+  width: 70px;
+}
+
+.main_header_img {
+  width: 60px;
+}
+
+/* BEGIN GENERIC CARD PROPERTIES*/
+.card {
+  border-radius: 0.5rem;
+  display: flex;
+  background-color: var(--primary-white);
+  padding: 1em;
+  box-shadow: var(--secondary-shadow);
+  margin-bottom: 1em;
+  transition: 0.1s ease-in-out;
+}
+.card:hover {
+  box-shadow: var(--primary-shadow);
+  transform: translateY(-2px);
+}
+
+.card_title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.card_status {
+  display: flex;
+  margin: 0.5em 0;
+  align-items: center;
+}
+
+.edit-delete_btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.edit-delete_btns button {
+  border: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  color: var(--primary-white);
+  border-radius: 5px;
+}
+
+.edit-delete_btns button:hover {
+  opacity: 1;
+}
+
+button.edit {
+  background-color: var(--btn-green);
+}
+button.delete {
+  background-color: var(--prept-pink);
+}
+
+/* END GENERIC CARD PROPERTIES */
+
+/* BEGIN WELCOME CONTENT */
+
+.welcome_card {
+  flex-direction: row;
+}
+
+.welcome_card p {
+  padding: 0 1em;
+}
+.welcome_card img {
+  width: 60px;
+}
+
+.welcome_card_right {
+  text-align: center;
+  min-width: 130px;
+}
+
+.complete {
+  background-color: rgb(223, 223, 223);
+}
+
+/* END WELCOME CONTENT */
+
+/* BEGIN HOUSEHOLD CONTENT */
+.household_card {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.household_card img {
+  width: 25px;
+  margin-right: 0.5rem;
 }
