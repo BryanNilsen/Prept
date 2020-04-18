@@ -1,5 +1,6 @@
 import React from "react";
 import APIManager from "../../modules/APIManager";
+import Calculations from "../../modules/Calculations";
 import water_icon from "../../images/water.png";
 import food_icon from "../../images/grocery.png";
 
@@ -14,9 +15,12 @@ function HouseholdCard(props) {
     <>
       <section className="card household_card">
         <div className="household_details">
-          <div className="card_title">{props.member.name}</div>
+          <div className="card_title">
+            {props.member.name} - age: {Calculations.getAge(props.member)}
+          </div>
           <div className="card_status">
-            <img src={water_icon} alt="water bottle" /> 1.5 gallons per day
+            <img src={water_icon} alt="water bottle" />{" "}
+            {Calculations.getWaterPerPersonPerDay(props.member)} ounces per day
           </div>
           <div className="card_status">
             <img src={food_icon} alt="groceries" /> 2000 calories per day
