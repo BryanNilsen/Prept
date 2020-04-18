@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import APIManager from "../../modules/APIManager";
 import household_icon from "../../images/household.png";
 
-const HouseholdAddForm = (props) => {
+const HouseholdEditForm = (props) => {
   const [householdMember, setHouseholdMember] = useState({
     userId: 0,
     name: "",
@@ -18,20 +18,28 @@ const HouseholdAddForm = (props) => {
     setHouseholdMember(stateToChange);
   };
 
-  const constructNewHouseholdMember = (evt) => {
+  const editHouseholdMember = (evt) => {
     evt.preventDefault();
-    const newHouseholdMember = { ...householdMember };
-    newHouseholdMember.userId = parseInt(sessionStorage.getItem("userId"));
-
-    if (newHouseholdMember.name === "" || newHouseholdMember.dob === "") {
+    const updatedMember = { ...householdMember };
+    if (updatedMember.name === "" || updatedMember.dob === "") {
       window.alert("Please input name and dob");
     } else {
       setIsLoading(true);
-      APIManager.postNew("householdMembers", newHouseholdMember).then(() =>
+      APIManager.updateResource("householdMembers", updatedMember).then(() =>
         props.history.push("/household")
       );
     }
   };
+
+  useEffect(() => {
+    APIManager.getResourceById(
+      "householdMembers",
+      parseInt(props.match.params.memberId)
+    ).then((member) => {
+      setHouseholdMember(member);
+      setIsLoading(false);
+    });
+  }, [props.match.params.memberId]);
 
   return (
     <>
@@ -48,7 +56,7 @@ const HouseholdAddForm = (props) => {
         </div>
         <div className="login_form_container">
           <form className="login_form">
-            <h2>Add Household Member</h2>
+            <h2>Edit Household Member</h2>
             <div className="form">
               <label htmlFor="name">Name:</label>
               <input
@@ -58,6 +66,7 @@ const HouseholdAddForm = (props) => {
                 onChange={handleFieldChange}
                 id="name"
                 placeholder="Name"
+                value={householdMember.name}
               />
             </div>
             <div className="form">
@@ -69,6 +78,7 @@ const HouseholdAddForm = (props) => {
                 onChange={handleFieldChange}
                 id="dob"
                 placeholder="date of birth"
+                value={householdMember.dob}
               />
             </div>
             <div className="form">
@@ -80,6 +90,7 @@ const HouseholdAddForm = (props) => {
                 onChange={handleFieldChange}
                 id="weight"
                 placeholder="weight"
+                value={householdMember.weight}
               />
             </div>
             <div className="form">
@@ -91,6 +102,7 @@ const HouseholdAddForm = (props) => {
                 onChange={handleFieldChange}
                 id="height"
                 placeholder="height"
+                value={householdMember.height}
               />
             </div>
 
@@ -98,7 +110,7 @@ const HouseholdAddForm = (props) => {
               type="button"
               className="btn-pink"
               disabled={isLoading}
-              onClick={constructNewHouseholdMember}
+              onClick={editHouseholdMember}
             >
               Submit
             </button>
@@ -109,4 +121,4 @@ const HouseholdAddForm = (props) => {
   );
 };
 
-export default HouseholdAddForm;
+export default HouseholdEditForm;
