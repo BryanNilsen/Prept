@@ -5,26 +5,27 @@ import Navbar from "./components/navbar/Navbar";
 import Credits from "./components/credits/Credits";
 
 function Prept() {
-  
-  const checkisAuthenticated = () =>
-    sessionStorage.getItem("userId") !== null;
-  
-  const [isAuthenticated, setIsAuthenticated] = useState(checkisAuthenticated());
+  const checkisAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    checkisAuthenticated()
+  );
 
   useEffect(() => {
-    checkisAuthenticated()
+    checkisAuthenticated();
   }, []);
 
   return (
-    <div className="main_container">
-      {isAuthenticated && <Navbar setIsAuthenticated={setIsAuthenticated} />}
-      <AppViews
-        isAuthenticated={isAuthenticated}
-        setIsAuthenticated={setIsAuthenticated}
+    <>
+      <div className="main_container">
+        {isAuthenticated && <Navbar setIsAuthenticated={setIsAuthenticated} />}
+        <AppViews
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
         />
-        {isAuthenticated && <Credits setIsAuthenticated={setIsAuthenticated} />}
-    </div>
+      </div>
+      {isAuthenticated && <Credits setIsAuthenticated={setIsAuthenticated} />}
+    </>
   );
 }
 
