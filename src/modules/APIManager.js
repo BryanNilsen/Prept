@@ -18,6 +18,21 @@ const APIManager = {
     return fetch(`${APIUrl}/users?email=${lowerEmail}&password=${password}`)
     .then(response => response.json())
   },
+  postNew(resource, newItem) {
+    return fetch(`${APIUrl}/${resource}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newItem)
+    }).then(data => data.json())
+  },
+  delete(resource, id){
+    return fetch(`${APIUrl}/${resource}/${id}`, {
+      method: "DELETE"
+    })
+    .then(response => response.json())
+  }
 }
 
 export default APIManager

@@ -4,6 +4,7 @@ import household_icon from "../../images/household.png";
 import water_icon from "../../images/water.png";
 import food_icon from "../../images/grocery.png";
 import supplies_icon from "../../images/supplies.png";
+import checkmark_icon from "../../images/checkmark.png"
 
 function Welcome() {
   const [user, setUser] = useState({householdMembers: []})
@@ -22,12 +23,14 @@ function Welcome() {
       <h3>Let's Get Prept in 4 Simple Steps ...</h3>
 
       {/* begin inventory cards */}
-      <section id="household_card" className={user.householdMembers.length > 0 ? "card welcome_card complete" : "card welcome_card"}>
+      <section id="household_card" className="card welcome_card">
         <h3>1</h3>
         <p>Add your household members and some basic info about them so Prept can estimate their daily water and caloric needs.</p>
         <div className="welcome_card_right">
-        <img src={household_icon} alt="household" />
-          <button className="btn-pink">+ add members</button>
+        {user.householdMembers.length > 0 
+          ? <><img src={checkmark_icon} alt="checkmark" /><div>complete</div></>
+          : <><img src={household_icon} alt="household" /><button className="btn-pink">+ add members</button></>
+        }
         </div>
       </section>
       <section id="water_card" className="card welcome_card">

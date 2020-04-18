@@ -32,7 +32,7 @@ const Credits = () => {
         </a>
         </p>
         <p>
-        Key / Household / Water Bottle Icons made by
+        Key / Checkmark / Household / Water Bottle Icons made by
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
           Freepik
         </a>

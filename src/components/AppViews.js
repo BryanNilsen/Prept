@@ -2,6 +2,7 @@ import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import Household from "./household/Household";
+import HouseholdAddForm from "./household/HouseholdAddForm";
 import Login from "./login/Login";
 import Water from "./water/Water";
 import Welcome from "./welcome/Welcome";
@@ -45,7 +46,19 @@ const AppViews = props => {
         exact
         path="/household"
         render={props => 
-          !isAuthenticated ? (props.history.replace("/login")) :  <Household />
+          !isAuthenticated 
+          ? (props.history.replace("/login")) 
+          :  <Household {...props}/>
+        }
+      />
+      <Route
+        exact
+        path="/household/new"
+        render={props => 
+          !isAuthenticated 
+          ? (props.history.replace("/login")) 
+          :  <HouseholdAddForm {...props}
+          />
         }
       />
       <Route

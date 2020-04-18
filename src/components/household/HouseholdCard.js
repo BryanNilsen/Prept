@@ -1,8 +1,14 @@
 import React from "react";
+import APIManager from "../../modules/APIManager"
 import water_icon from "../../images/water.png";
 import food_icon from "../../images/grocery.png";
 
 function HouseholdCard(props) {
+
+  const deleteHouseholdMember = id => {
+    APIManager.delete("householdMembers",id)
+      .then(() => props.getHouseholdMembers());
+  };
 
   return (
     <>
@@ -14,7 +20,7 @@ function HouseholdCard(props) {
         </div>
         <div className="edit-delete_btns">
           <button className="edit">edit</button>
-          <button className="delete">delete</button>
+          <button className="delete" onClick={() => deleteHouseholdMember(props.member.id)}>delete</button>
         </div>
       </section>
     </>
