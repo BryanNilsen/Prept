@@ -9,6 +9,7 @@ const HouseholdAddForm = (props) => {
     dob: "",
     weight: 0,
     height: 0,
+    gender: "",
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -58,6 +59,17 @@ const HouseholdAddForm = (props) => {
                 onChange={handleFieldChange}
                 id="name"
                 placeholder="Name"
+              />
+            </div>
+            <div className="form">
+              <label htmlFor="gender">Gender:</label>
+              <input
+                className="form_inputs"
+                type="text"
+                required
+                onChange={handleFieldChange}
+                id="gender"
+                placeholder="Gender"
               />
             </div>
             <div className="form">

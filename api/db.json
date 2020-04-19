@@ -17,34 +17,38 @@
     {
       "id": 4,
       "userId": 1,
-      "name": "Bryan",
-      "dob": "2020-04-09",
-      "weight": 200,
-      "height": 72
+      "name": "Martin",
+      "dob": "1982-07-28",
+      "weight": "230",
+      "height": "77",
+      "gender": "M"
     },
     {
-      "id": 1,
       "userId": 1,
-      "name": "Dad",
-      "dob": "1980-01-01T00:00",
-      "weight": 200,
-      "height": 72
+      "name": "Jane",
+      "dob": "1981-03-21",
+      "weight": "120",
+      "height": "60",
+      "id": 5,
+      "gender": "F"
     },
     {
-      "id": 2,
       "userId": 1,
-      "name": "Mom",
-      "dob": "1980-02-02T00:00",
-      "weight": 100,
-      "height": 60
+      "name": "Ryder",
+      "dob": "2010-08-26",
+      "weight": "69",
+      "height": "54",
+      "id": 6,
+      "gender": "M"
     },
     {
-      "id": 3,
       "userId": 1,
-      "name": "Son",
-      "dob": "2010-02-02T00:00",
-      "weight": 65,
-      "height": 54
+      "name": "Beebop",
+      "dob": "2009-04-09",
+      "weight": "55",
+      "height": "42",
+      "gender": "F",
+      "id": 7
     }
   ],
   "waters": [
