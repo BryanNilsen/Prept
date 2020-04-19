@@ -19,11 +19,12 @@ function HouseholdCard(props) {
             {props.member.name} - age: {Calculations.getAge(props.member)}
           </div>
           <div className="card_status">
-            <img src={water_icon} alt="water bottle" />{" "}
+            <img src={water_icon} alt="water bottle" />
             {Calculations.getWaterPerPersonPerDay(props.member)} ounces per day
           </div>
           <div className="card_status">
-            <img src={food_icon} alt="groceries" /> 2000 calories per day
+            <img src={food_icon} alt="groceries" />
+            {Calculations.getCalories(props.member)} calories per day
           </div>
         </div>
         <div className="edit-delete_btns">
