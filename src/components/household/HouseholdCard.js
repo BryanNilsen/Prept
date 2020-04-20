@@ -24,7 +24,8 @@ function HouseholdCard(props) {
           </div>
           <div className="card_status">
             <img src={food_icon} alt="groceries" />
-            {Calculations.getCalories(props.member)} calories per day
+            {Calculations.getCaloriesPerPersonPerDay(props.member)} calories per
+            day
           </div>
         </div>
         <div className="edit-delete_btns">

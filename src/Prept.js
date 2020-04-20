@@ -17,14 +17,32 @@ function Prept() {
 
   return (
     <>
-      <div className="main_container">
-        {isAuthenticated && <Navbar setIsAuthenticated={setIsAuthenticated} />}
-        <AppViews
-          isAuthenticated={isAuthenticated}
-          setIsAuthenticated={setIsAuthenticated}
-        />
+      <div className="maingrid">
+        <div></div>
+        <div className="grid_nav">
+          {isAuthenticated && (
+            <Navbar setIsAuthenticated={setIsAuthenticated} />
+          )}
+        </div>
+        <div></div>
+        <div></div>
+
+        <div className="main_container">
+          <AppViews
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+          />
+        </div>
+
+        <div></div>
+        <div></div>
+        <div className="grid_footer">
+          {isAuthenticated && (
+            <Credits setIsAuthenticated={setIsAuthenticated} />
+          )}
+        </div>
+        <div></div>
       </div>
-      {isAuthenticated && <Credits setIsAuthenticated={setIsAuthenticated} />}
     </>
   );
 }

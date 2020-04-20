@@ -21,15 +21,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--light-gray);
+  background-color: var(--font-gray-dark);
   color: var(--font-gray);
   height: 100%;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
   height: 100%;
+}
+
+.maingrid {
+  display: grid;
+  grid-template-columns: auto minmax(400px, 800px) auto;
+  grid-template-rows: auto 100% auto;
+  min-height: 100%;
+}
+.grid_nav {
+  background-color: var(--primary-color);
+}
+.grid_footer {
+  /* align-self: end; */
+  background-color: var(--primary-color);
 }
 
 code {
@@ -199,9 +211,10 @@ label {
 
 /* MAIN CONTENT */
 .main_container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: 1 0 auto; */
+  background-color: var(--light-gray);
 }
 
 .main_content {
@@ -322,10 +335,6 @@ button.delete {
 }
 
 /* CREDITS */
-.footer {
-  background-color: var(--primary-color);
-  flex-shrink: 0;
-}
 .icon-credits {
   text-align: center;
   font-size: 0.5em;
