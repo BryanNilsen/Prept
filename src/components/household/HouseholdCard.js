@@ -7,7 +7,7 @@ import food_icon from "../../images/grocery.png";
 function HouseholdCard(props) {
   const deleteHouseholdMember = (id) => {
     APIManager.deleteResource("householdMembers", id).then(() =>
-      props.getHouseholdMembers()
+      props.getUserData()
     );
   };
 

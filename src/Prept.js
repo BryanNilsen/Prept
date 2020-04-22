@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Prept.css";
+import APIManager from "./modules/APIManager";
 import AppViews from "./components/AppViews";
 import Navbar from "./components/navbar/Navbar";
 import Credits from "./components/credits/Credits";
@@ -11,9 +12,27 @@ function Prept() {
     checkisAuthenticated()
   );
 
+  const [user, setUser] = useState({
+    id: "",
+    username: "",
+    householdMembers: [],
+    foods: [],
+    waters: [],
+    supplies: [],
+  });
+
+  const getUserData = () => {
+    const userId = sessionStorage.getItem("userId");
+    return APIManager.getUserWithAllData(userId).then((user) => {
+      setUser(user);
+      return user;
+    });
+  };
+
   useEffect(() => {
     checkisAuthenticated();
-  }, []);
+    getUserData();
+  }, [isAuthenticated, user]);
 
   return (
     <>
@@ -31,6 +50,8 @@ function Prept() {
           <AppViews
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
+            getUserData={getUserData}
           />
         </div>
 

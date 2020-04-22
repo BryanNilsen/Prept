@@ -1,33 +1,26 @@
 import React, { useState, useEffect } from "react";
-import APIManager from "../../modules/APIManager";
 import Calculations from "../../modules/Calculations";
 import household_icon from "../../images/household.png";
 import HouseholdCard from "./HouseholdCard";
 
 const Household = (props) => {
-  const [householdMembers, setHouseholdMembers] = useState([]);
+  const user = props.user;
+  const getUserData = props.getUserData;
+
   const [needsTotals, setNeedsTotals] = useState({
     water: 0,
     calories: 0,
   });
 
-  const getHouseholdMembers = () => {
-    const userId = sessionStorage.getItem("userId");
-    return APIManager.getUserWithHousehold(userId).then((res) => {
-      setHouseholdMembers(res.householdMembers);
-      return res.householdMembers;
-    });
-  };
-
   useEffect(() => {
-    getHouseholdMembers().then((members) => {
-      const water = Calculations.getTotalWaterNeededPerHouseholdPerDay(members);
-      const calories = Calculations.getTotalCaloriesNeededPerHouseholdPerDay(
-        members
-      );
-      setNeedsTotals({ water, calories });
-    });
-  }, []);
+    const water = Calculations.getTotalWaterNeededPerHouseholdPerDay(
+      user.householdMembers
+    );
+    const calories = Calculations.getTotalCaloriesNeededPerHouseholdPerDay(
+      user.householdMembers
+    );
+    setNeedsTotals({ water, calories });
+  }, [user.householdMembers]);
 
   return (
     <>
@@ -42,7 +35,7 @@ const Household = (props) => {
           </div>
           <h1>Household</h1>
         </div>
-        <h3>You have logged {householdMembers.length} members</h3>
+        <h3>You have logged {user.householdMembers.length} members</h3>
         <h3>
           {needsTotals.water} - water in ounces needed per household per day
         </h3>
@@ -58,11 +51,13 @@ const Household = (props) => {
         <h4>click card for details</h4>
         {/* begin member cards */}
 
-        {householdMembers.map((member) => (
+        {user.householdMembers.map((member) => (
           <HouseholdCard
             key={member.id}
             member={member}
-            getHouseholdMembers={getHouseholdMembers}
+            user={user}
+            getUserData={getUserData}
+            // getHouseholdMembers={getHouseholdMembers}
             {...props}
           />
         ))}
