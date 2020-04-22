@@ -31,8 +31,11 @@ function Prept() {
 
   useEffect(() => {
     checkisAuthenticated();
+  }, []);
+
+  useEffect(() => {
     getUserData();
-  }, [isAuthenticated, user]);
+  }, []);
 
   return (
     <>
