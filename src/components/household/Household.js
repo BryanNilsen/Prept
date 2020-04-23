@@ -35,13 +35,17 @@ const Household = (props) => {
           </div>
           <h1>Household</h1>
         </div>
-        <h3>{user.householdMembers.length} household members to prep for</h3>
-        <h3>
-          {needsTotals.water} oz. - (
-          {Calculations.convertOzToGallons(needsTotals.water)} gal.) water
-          needed per household per day
-        </h3>
-        <h3>Total Calories needed per day: {needsTotals.calories}</h3>
+
+        {/* <div className="card">
+          <h3>{user.householdMembers.length} household members to prep for</h3>
+          <h3>
+            {needsTotals.water} oz. - (
+            {Calculations.convertOzToGallons(needsTotals.water)} gal.) water
+            needed per household per day
+          </h3>
+          <h3>Total Calories needed per day: {needsTotals.calories}</h3>
+        </div> */}
+
         <button
           className="btn-pink"
           onClick={() => {
