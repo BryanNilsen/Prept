@@ -26,9 +26,9 @@ const HouseholdEditForm = (props) => {
       window.alert("Please input name and dob");
     } else {
       setIsLoading(true);
-      APIManager.updateResource("householdMembers", updatedMember).then(() =>
-        props.history.push("/household")
-      );
+      APIManager.updateResource("householdMembers", updatedMember)
+        .then(() => props.getUserData())
+        .then(() => props.history.push("/household"));
     }
   };
 
