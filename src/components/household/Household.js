@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calculations from "../../modules/Calculations";
-import household_icon from "../../images/household.png";
 import HouseholdCard from "./HouseholdCard";
+import household_icon from "../../images/household.png";
 
 const Household = (props) => {
   const user = props.user;
@@ -35,9 +35,11 @@ const Household = (props) => {
           </div>
           <h1>Household</h1>
         </div>
-        <h3>You have logged {user.householdMembers.length} members</h3>
+        <h3>{user.householdMembers.length} household members to prep for</h3>
         <h3>
-          {needsTotals.water} - water in ounces needed per household per day
+          {needsTotals.water} oz. - (
+          {Calculations.convertOzToGallons(needsTotals.water)} gal.) water
+          needed per household per day
         </h3>
         <h3>Total Calories needed per day: {needsTotals.calories}</h3>
         <button

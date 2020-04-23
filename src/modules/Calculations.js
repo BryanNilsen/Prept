@@ -39,14 +39,22 @@ const Calculations = {
       (acc, cv) => this.getCaloriesPerPersonPerDay(cv) + acc,
       0
     );
-    return caloriesTotal;
+    return caloriesTotal.toLocaleString();
   },
   getTotalWaterNeededPerHouseholdPerDay(membersArray) {
     const caloriesTotal = membersArray.reduce(
       (acc, cv) => this.getWaterPerPersonPerDay(cv) + acc,
       0
     );
-    return caloriesTotal;
+    return caloriesTotal.toLocaleString();
+  },
+  convertOzToGallons(oz) {
+    return (oz / 128).toFixed(2);
+  },
+  convertInToFeet(totalInches) {
+    const feet = Math.floor(totalInches / 12);
+    const inches = totalInches % 12;
+    return `${feet}'${inches}"`;
   },
 };
 
