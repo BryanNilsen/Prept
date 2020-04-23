@@ -12,6 +12,8 @@ import Food from "./food/Food";
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
   const isAuthenticated = props.isAuthenticated;
+  const user = props.user;
+  const getUserData = props.getUserData;
 
   return (
     <React.Fragment>
@@ -19,28 +21,44 @@ const AppViews = (props) => {
         exact
         path="/"
         render={(props) =>
-          !isAuthenticated ? props.history.replace("/login") : <Home />
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <Home user={user} />
+          )
         }
       />
       <Route
         exact
         path="/water"
         render={(props) =>
-          !isAuthenticated ? props.history.replace("/login") : <Water />
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <Water user={user} />
+          )
         }
       />
       <Route
         exact
         path="/food"
         render={(props) =>
-          !isAuthenticated ? props.history.replace("/login") : <Food />
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <Food user={user} />
+          )
         }
       />
       <Route
         exact
         path="/welcome"
         render={(props) =>
-          !isAuthenticated ? props.history.replace("/login") : <Welcome />
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <Welcome user={user} />
+          )
         }
       />
       <Route
@@ -50,7 +68,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Household {...props} />
+            <Household user={user} getUserData={getUserData} {...props} />
           )
         }
       />
@@ -61,7 +79,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <HouseholdAddForm {...props} />
+            <HouseholdAddForm getUserData={getUserData} {...props} />
           )
         }
       />
@@ -72,7 +90,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <HouseholdEditForm {...props} />
+            <HouseholdEditForm getUserData={getUserData} {...props} />
           )
         }
       />

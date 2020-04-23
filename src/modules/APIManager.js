@@ -16,8 +16,13 @@ const APIManager = {
   },
   getUserWithAllData(id) {
     return fetch(
-      `${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters`
+      `${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters&_embed=foods&_embed=supplies`
     ).then((response) => response.json());
+    // .then((user) => {
+    //   delete user.password;
+    //   delete user.email;
+    //   return user;
+    // });
   },
   getUserByEmail(email, password) {
     let lowerEmail = email.toLowerCase();

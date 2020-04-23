@@ -45,8 +45,8 @@
       "userId": 1,
       "name": "Beebop",
       "dob": "2009-04-09",
-      "weight": "55",
-      "height": "42",
+      "weight": "63",
+      "height": "51",
       "gender": "F",
       "id": 7
     }
@@ -66,5 +66,38 @@
       "qty": 15,
       "oz": 12
     }
-  ]
+  ],
+  "foods": [
+    {
+      "id": 0,
+      "userId": 1,
+      "name": "Kroger Peanut Butter",
+      "qty": 4,
+      "oz": 16,
+      "servings": 14,
+      "calPerServing": 180,
+      "expDate": "2020-11-24"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Bush's Kidney Beans",
+      "qty": 2,
+      "oz": 16,
+      "servings": 3.5,
+      "calPerServing": 120,
+      "expDate": "2022-01-00"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "Maruchan Ramen - Chicken",
+      "qty": 12,
+      "oz": 3,
+      "servings": 2,
+      "calPerServing": 190,
+      "expDate": "2021-04-15"
+    }
+  ],
+  "supplies": []
 }

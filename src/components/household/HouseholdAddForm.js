@@ -28,9 +28,9 @@ const HouseholdAddForm = (props) => {
       window.alert("Please input name and dob");
     } else {
       setIsLoading(true);
-      APIManager.postNew("householdMembers", newHouseholdMember).then(() =>
-        props.history.push("/household")
-      );
+      APIManager.postNew("householdMembers", newHouseholdMember)
+        .then(() => props.getUserData())
+        .then(() => props.history.push("/household"));
     }
   };
 

@@ -1,14 +1,4 @@
 const Calculations = {
-  getWaterPerPersonPerDay(person) {
-    const age = this.getAge(person);
-    let ageMultiplier = 30;
-    if (30 <= age <= 55) {
-      ageMultiplier = 35;
-    } else if (age < 30) {
-      ageMultiplier = 40;
-    }
-    return Math.ceil(((person.weight / 2.2) * ageMultiplier) / 28.3);
-  },
   getAge(person) {
     const today = new Date();
     const birthDate = new Date(person.dob);
@@ -19,7 +9,17 @@ const Calculations = {
     }
     return age;
   },
-  getCalories(person) {
+  getWaterPerPersonPerDay(person) {
+    const age = this.getAge(person);
+    let ageMultiplier = 30;
+    if (30 <= age <= 55) {
+      ageMultiplier = 35;
+    } else if (age < 30) {
+      ageMultiplier = 40;
+    }
+    return Math.ceil(((person.weight / 2.2) * ageMultiplier) / 28.3);
+  },
+  getCaloriesPerPersonPerDay(person) {
     let calories = 0;
     if (person.gender === "M") {
       calories =
@@ -33,6 +33,28 @@ const Calculations = {
         5 * (this.getAge(person) - 161);
     }
     return Math.ceil(calories);
+  },
+  getTotalCaloriesNeededPerHouseholdPerDay(membersArray) {
+    const caloriesTotal = membersArray.reduce(
+      (acc, cv) => this.getCaloriesPerPersonPerDay(cv) + acc,
+      0
+    );
+    return caloriesTotal.toLocaleString();
+  },
+  getTotalWaterNeededPerHouseholdPerDay(membersArray) {
+    const caloriesTotal = membersArray.reduce(
+      (acc, cv) => this.getWaterPerPersonPerDay(cv) + acc,
+      0
+    );
+    return caloriesTotal.toLocaleString();
+  },
+  convertOzToGallons(oz) {
+    return (oz / 128).toFixed(2);
+  },
+  convertInToFeet(totalInches) {
+    const feet = Math.floor(totalInches / 12);
+    const inches = totalInches % 12;
+    return `${feet}'${inches}"`;
   },
 };
 
