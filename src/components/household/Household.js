@@ -63,7 +63,6 @@ const Household = (props) => {
             member={member}
             user={user}
             getUserData={getUserData}
-            // getHouseholdMembers={getHouseholdMembers}
             {...props}
           />
         ))}

@@ -35,7 +35,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Water user={user} />
+            <Water user={user} getUserData={getUserData} />
           )
         }
       />
@@ -46,7 +46,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Food user={user} />
+            <Food user={user} getUserData={getUserData} />
           )
         }
       />

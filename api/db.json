@@ -57,14 +57,24 @@
       "userId": 1,
       "name": "Aquafina",
       "qty": 32,
-      "oz": 12
+      "oz": 12,
+      "container": "bottle"
     },
     {
       "id": 1,
       "userId": 1,
       "name": "La Croix - Lemon",
       "qty": 15,
-      "oz": 12
+      "oz": 12,
+      "container": "can"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "La Croix - Lime",
+      "qty": 1,
+      "oz": 12,
+      "container": "can"
     }
   ],
   "foods": [

@@ -1,4 +1,5 @@
 import React from "react";
+import WaterCard from "./WaterCard";
 import water_icon from "../../images/water.png";
 
 function Water(props) {
@@ -18,16 +19,21 @@ function Water(props) {
         <button
           className="btn-pink"
           onClick={() => {
-            props.history.push("/household/new");
+            props.history.push("/water/new");
           }}
         >
           + add water
         </button>
         <h4>click card for details</h4>
         {/* begin water cards */}
-
         {user.waters.map((water) => (
-          <p>{water.name}</p>
+          <WaterCard
+            key={water.id}
+            water={water}
+            user={user}
+            getUserData={getUserData}
+            {...props}
+          />
         ))}
 
         {/* end water cards */}
