@@ -6,6 +6,11 @@ function Water(props) {
   const user = props.user;
   const getUserData = props.getUserData;
 
+  // props.waters => reduce qty * oz for each
+  const calculateTotal = (waterArray) => {
+    return waterArray.reduce((acc, cv) => acc + cv.qty * cv.oz, 0);
+  };
+
   return (
     <>
       <div className="main_content">
@@ -15,6 +20,7 @@ function Water(props) {
           </div>
           <h1>Water</h1>
         </div>
+        <h2>total water: {calculateTotal(user.waters).toLocaleString()} oz.</h2>
 
         <button
           className="btn-pink"

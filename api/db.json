@@ -75,6 +75,22 @@
       "qty": 1,
       "oz": 12,
       "container": "can"
+    },
+    {
+      "userId": 1,
+      "name": "Poland Spring",
+      "qty": "32",
+      "oz": "12",
+      "container": "bottle",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "name": "Kroger Filtered Water",
+      "qty": "2",
+      "oz": "128",
+      "container": "jug",
+      "id": 5
     }
   ],
   "foods": [

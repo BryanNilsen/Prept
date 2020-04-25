@@ -1,8 +1,8 @@
 import React from "react";
 import APIManager from "../../modules/APIManager";
-import Calculations from "../../modules/Calculations";
-import water_icon from "../../images/water.png";
-import food_icon from "../../images/grocery.png";
+// import Calculations from "../../modules/Calculations";
+// import water_icon from "../../images/water.png";
+// import food_icon from "../../images/grocery.png";
 
 function WaterCard(props) {
   const deleteWater = (id) => {
@@ -18,7 +18,6 @@ function WaterCard(props) {
             <strong>{props.water.name}</strong>
           </div>
           <div className="card_status">
-            <img src={water_icon} alt="water bottle" />
             {props.water.qty} x {props.water.oz} oz. {props.water.container}
             {props.water.qty > 1 && "s"} ={" "}
             {(props.water.qty * props.water.oz).toLocaleString()}

@@ -36,7 +36,7 @@ const Household = (props) => {
           <h1>Household</h1>
         </div>
 
-        {/* <div className="card">
+        <div className="card">
           <h3>{user.householdMembers.length} household members to prep for</h3>
           <h3>
             {needsTotals.water} oz. - (
@@ -44,7 +44,7 @@ const Household = (props) => {
             needed per household per day
           </h3>
           <h3>Total Calories needed per day: {needsTotals.calories}</h3>
-        </div> */}
+        </div>
 
         <button
           className="btn-pink"
