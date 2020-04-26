@@ -26,14 +26,16 @@ const Household = (props) => {
     <>
       <div className="main_content">
         <div className="main_content_header">
-          <div className="imgwrap">
-            <img
-              src={household_icon}
-              alt="household"
-              className="main_header_img"
-            />
+          <div className="header_lft">
+            <div className="imgwrap">
+              <img
+                src={household_icon}
+                alt="household"
+                className="main_header_img"
+              />
+            </div>
+            <h1>Household</h1>
           </div>
-          <h1>Household</h1>
         </div>
 
         <div className="card">

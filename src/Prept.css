@@ -69,17 +69,21 @@ code {
 
 /* BEGIN NAVBAR STYLE */
 nav {
-  background-color: var(--primary-color);
   padding: 0.5em;
   display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  text-decoration: none;
 }
 
 .navlinks {
   display: flex;
   width: 60%;
-  justify-content: space-evenly;
   margin: 0;
   align-items: center;
+  justify-content: space-evenly;
 }
 .navlinks li {
   color: var(--primary-white);
@@ -94,8 +98,12 @@ nav {
   filter: var(--logo-shadow);
 }
 
+.flex {
+  display: flex;
+}
+
 .logo-sm {
-  width: 30px;
+  width: 35px;
 }
 
 /* END NAVBAR STYLE */
@@ -235,6 +243,7 @@ label {
 
 .main_content_header {
   display: flex;
+  justify-content: space-between;
 }
 
 .imgwrap {
@@ -243,6 +252,23 @@ label {
 
 .main_header_img {
   width: 60px;
+}
+
+.header_lft {
+  display: flex;
+}
+
+.header_details_rt {
+  text-align: center;
+}
+
+.header_details_rt h1,
+h4 {
+  margin: 0px;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 /* BEGIN GENERIC CARD PROPERTIES*/

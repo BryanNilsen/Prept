@@ -1,4 +1,5 @@
 import React from "react";
+import Calculations from "../../modules/Calculations";
 import WaterCard from "./WaterCard";
 import water_icon from "../../images/water.png";
 
@@ -6,21 +7,31 @@ function Water(props) {
   const user = props.user;
   const getUserData = props.getUserData;
 
-  // props.waters => reduce qty * oz for each
-  const calculateTotal = (waterArray) => {
-    return waterArray.reduce((acc, cv) => acc + cv.qty * cv.oz, 0);
-  };
-
   return (
     <>
       <div className="main_content">
         <div className="main_content_header">
-          <div className="imgwrap">
-            <img src={water_icon} alt="water" className="main_header_img" />
+          <div className="header_lft">
+            <div className="imgwrap">
+              <img src={water_icon} alt="water" className="main_header_img" />
+            </div>
+            <h1>Water</h1>
           </div>
-          <h1>Water</h1>
+          <div className="header_details_rt">
+            <h1>{Calculations.calculateDaysOfWaterPerHousehold(user)}</h1>
+            <h4>days</h4>
+          </div>
         </div>
-        <h2>total water: {calculateTotal(user.waters).toLocaleString()} oz.</h2>
+
+        <h2>
+          total water Prept:{" "}
+          {Calculations.calculateWaterTotal(user.waters).toLocaleString()} oz.
+          //
+          {Calculations.convertOzToGallons(
+            Calculations.calculateWaterTotal(user.waters)
+          )}{" "}
+          gal.
+        </h2>
 
         <button
           className="btn-pink"

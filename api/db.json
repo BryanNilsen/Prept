@@ -72,7 +72,7 @@
       "id": 3,
       "userId": 1,
       "name": "La Croix - Lime",
-      "qty": 1,
+      "qty": "15",
       "oz": 12,
       "container": "can"
     },

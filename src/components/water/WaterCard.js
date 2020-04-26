@@ -26,9 +26,7 @@ function WaterCard(props) {
         <div className="edit-delete_btns">
           <button
             className="edit"
-            onClick={() =>
-              props.history.push(`/household/edit/${props.water.id}`)
-            }
+            onClick={() => props.history.push(`/water/edit/${props.water.id}`)}
           >
             edit
           </button>
