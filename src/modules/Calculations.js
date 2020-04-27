@@ -56,6 +56,16 @@ const Calculations = {
     const inches = totalInches % 12;
     return `${feet}'${inches}"`;
   },
+  calculateWaterTotal(waterArray) {
+    return waterArray.reduce((acc, cv) => acc + cv.qty * cv.oz, 0);
+  },
+  calculateDaysOfWaterPerHousehold(user) {
+    const waterTotal = this.calculateWaterTotal(user.waters);
+    const waterNeededPerDay = this.getTotalWaterNeededPerHouseholdPerDay(
+      user.householdMembers
+    );
+    return Math.floor(waterTotal / waterNeededPerDay);
+  },
 };
 
 export default Calculations;

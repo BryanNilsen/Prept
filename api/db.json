@@ -57,14 +57,40 @@
       "userId": 1,
       "name": "Aquafina",
       "qty": 32,
-      "oz": 12
+      "oz": 12,
+      "container": "bottle"
     },
     {
       "id": 1,
       "userId": 1,
       "name": "La Croix - Lemon",
       "qty": 15,
-      "oz": 12
+      "oz": 12,
+      "container": "can"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "name": "La Croix - Lime",
+      "qty": "15",
+      "oz": 12,
+      "container": "can"
+    },
+    {
+      "userId": 1,
+      "name": "Poland Spring",
+      "qty": "32",
+      "oz": "12",
+      "container": "bottle",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "name": "Kroger Filtered Water",
+      "qty": "2",
+      "oz": "128",
+      "container": "jug",
+      "id": 5
     }
   ],
   "foods": [

@@ -6,6 +6,8 @@ import HouseholdAddForm from "./household/HouseholdAddForm";
 import HouseholdEditForm from "./household/HouseholdEditForm";
 import Login from "./login/Login";
 import Water from "./water/Water";
+import WaterAddForm from "./water/WaterAddForm";
+import WaterEditForm from "./water/WaterEditForm";
 import Welcome from "./welcome/Welcome";
 import Food from "./food/Food";
 
@@ -35,7 +37,29 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Water user={user} />
+            <Water user={user} getUserData={getUserData} {...props} />
+          )
+        }
+      />
+      <Route
+        exact
+        path="/water/new"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <WaterAddForm user={user} getUserData={getUserData} {...props} />
+          )
+        }
+      />
+      <Route
+        exact
+        path="/water/edit/:waterId(\d+)"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <WaterEditForm user={user} getUserData={getUserData} {...props} />
           )
         }
       />
@@ -46,7 +70,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Food user={user} />
+            <Food user={user} getUserData={getUserData} />
           )
         }
       />
