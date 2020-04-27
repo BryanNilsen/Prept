@@ -71,7 +71,7 @@ code {
 nav {
   padding: 0.5em;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 nav a {

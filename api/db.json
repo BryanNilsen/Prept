@@ -55,8 +55,8 @@
     {
       "id": 0,
       "userId": 1,
-      "name": "Aquafina",
-      "qty": 32,
+      "name": "Aquafina Case",
+      "qty": "32",
       "oz": 12,
       "container": "bottle"
     },
@@ -78,7 +78,7 @@
     },
     {
       "userId": 1,
-      "name": "Poland Spring",
+      "name": "Poland Spring - Case",
       "qty": "32",
       "oz": "12",
       "container": "bottle",
