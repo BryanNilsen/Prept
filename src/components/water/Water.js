@@ -1,7 +1,7 @@
 import React from "react";
 import Calculations from "../../modules/Calculations";
 import WaterCard from "./WaterCard";
-import water_icon from "../../images/water.png";
+import WaterHeader from "./WaterHeader";
 
 function Water(props) {
   const user = props.user;
@@ -10,23 +10,12 @@ function Water(props) {
   return (
     <>
       <div className="main_content">
-        <div className="main_content_header">
-          <div className="header_lft">
-            <div className="imgwrap">
-              <img src={water_icon} alt="water" className="main_header_img" />
-            </div>
-            <h1>Water</h1>
-          </div>
-          <div className="header_details_rt">
-            <h1>{Calculations.calculateDaysOfWaterPerHousehold(user)}</h1>
-            <h4>days</h4>
-          </div>
-        </div>
+        <WaterHeader user={user} />
 
         <h2>
           total water Prept:{" "}
-          {Calculations.calculateWaterTotal(user.waters).toLocaleString()} oz.
-          //
+          {Calculations.calculateWaterTotal(user.waters).toLocaleString()} oz. -
+          or -
           {Calculations.convertOzToGallons(
             Calculations.calculateWaterTotal(user.waters)
           )}{" "}
