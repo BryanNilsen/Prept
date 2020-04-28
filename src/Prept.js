@@ -23,6 +23,9 @@ function Prept() {
 
   const getUserData = () => {
     const userId = sessionStorage.getItem("userId");
+    if (!userId) {
+      return;
+    }
     return APIManager.getUserWithAllData(userId).then((user) => {
       setUser(user);
       return user;

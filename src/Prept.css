@@ -1,6 +1,6 @@
 :root {
   --primary-color: #186e83;
-  /* --primary-color: #225990; */
+  /* --primary-color: #0d3e6f; */
   --primary-white: #ffffff;
   --prept-pink: #c4236d;
   --light-gray: #f0f0f0;
@@ -272,6 +272,12 @@ h4 {
   flex-direction: column;
 }
 
+.inventory_add {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 /* BEGIN GENERIC CARD PROPERTIES*/
 .card {
   border-radius: 0.5rem;
@@ -288,7 +294,19 @@ h4 {
 }
 
 .card_title {
+  min-width: 180px;
   margin-bottom: 0.5em;
+}
+
+.card_middle-lg {
+  display: flex;
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+  align-items: center;
+}
+
+.smaller {
+  font-size: 1rem;
 }
 
 .card_status {

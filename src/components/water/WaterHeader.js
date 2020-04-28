@@ -7,6 +7,8 @@ function WaterHeader(props) {
   // variables - h1 text
   // variables - details calculation
 
+  const days = Calculations.calculateDaysOfWaterPerHousehold(props.user);
+
   return (
     <div className="main_content_header">
       <div className="header_lft">
@@ -16,7 +18,7 @@ function WaterHeader(props) {
         <h1>Water</h1>
       </div>
       <div className="header_details_rt">
-        <h1>{Calculations.calculateDaysOfWaterPerHousehold(props.user)}</h1>
+        <h1>{!isNaN(days) ? days : ""}</h1>
         <h4>days</h4>
       </div>
     </div>

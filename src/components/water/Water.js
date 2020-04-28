@@ -14,10 +14,10 @@ function Water(props) {
 
         <h2>
           total water Prept:{" "}
-          <span class="tooltip">
+          <span className="tooltip">
             {Calculations.calculateWaterTotal(user.waters).toLocaleString()}{" "}
             ounces
-            <span class="tooltiptext">
+            <span className="tooltiptext">
               {Calculations.convertOzToGallons(
                 Calculations.calculateWaterTotal(user.waters)
               )}{" "}
@@ -25,16 +25,19 @@ function Water(props) {
             </span>
           </span>
         </h2>
+        <div className="inventory_add">
+          <h4>Water Inventory:</h4>
+          <button
+            className="btn-pink"
+            onClick={() => {
+              props.history.push("/water/new");
+            }}
+          >
+            + add water
+          </button>
+        </div>
+        {/* <h4>click card for details</h4> */}
 
-        <button
-          className="btn-pink"
-          onClick={() => {
-            props.history.push("/water/new");
-          }}
-        >
-          + add water
-        </button>
-        <h4>click card for details</h4>
         {/* begin water cards */}
         {user.waters.map((water) => (
           <WaterCard
@@ -45,7 +48,6 @@ function Water(props) {
             {...props}
           />
         ))}
-
         {/* end water cards */}
       </div>
     </>
