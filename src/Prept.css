@@ -136,6 +136,7 @@ nav a {
 }
 
 .login_form > h2 {
+  text-align: center;
   margin-top: 0;
   color: var(--prept-pink);
 }
@@ -363,4 +364,38 @@ button.delete {
 .icon-credits {
   text-align: center;
   font-size: 0.5em;
+}
+
+/* TOOLTIPS */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted var(--font-gray); /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--light-gray);
+  color: var(--prept-pink);
+  text-align: center;
+  padding: 3px 5px;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  top: -3px;
+  left: 0px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip:hover {
+  border-bottom: 2px dotted var(--light-gray);
 }

@@ -3,6 +3,10 @@ import Calculations from "../../modules/Calculations";
 import water_icon from "../../images/water.png";
 
 function WaterHeader(props) {
+  // variables - img src icon / alt
+  // variables - h1 text
+  // variables - details calculation
+
   return (
     <div className="main_content_header">
       <div className="header_lft">

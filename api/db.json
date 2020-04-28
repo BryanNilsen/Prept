@@ -91,6 +91,14 @@
       "oz": "128",
       "container": "jug",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "name": "Poland Spring",
+      "qty": "12",
+      "oz": "20",
+      "container": "bottle",
+      "id": 6
     }
   ],
   "foods": [

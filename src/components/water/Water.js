@@ -14,12 +14,16 @@ function Water(props) {
 
         <h2>
           total water Prept:{" "}
-          {Calculations.calculateWaterTotal(user.waters).toLocaleString()} oz. -
-          or -
-          {Calculations.convertOzToGallons(
-            Calculations.calculateWaterTotal(user.waters)
-          )}{" "}
-          gal.
+          <span class="tooltip">
+            {Calculations.calculateWaterTotal(user.waters).toLocaleString()}{" "}
+            ounces
+            <span class="tooltiptext">
+              {Calculations.convertOzToGallons(
+                Calculations.calculateWaterTotal(user.waters)
+              )}{" "}
+              gallons
+            </span>
+          </span>
         </h2>
 
         <button
