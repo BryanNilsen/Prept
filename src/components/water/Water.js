@@ -7,26 +7,37 @@ function Water(props) {
   const user = props.user;
   const getUserData = props.getUserData;
 
+  const days = Calculations.calculateDaysOfWaterPerHousehold(props.user);
+
   return (
     <>
       <div className="main_content">
-        <WaterHeader user={user} />
+        <WaterHeader user={user} days={days} />
 
-        <h2>
-          total water Prept:{" "}
-          <span className="tooltip">
-            {Calculations.calculateWaterTotal(user.waters).toLocaleString()}{" "}
-            ounces
-            <span className="tooltiptext">
-              {Calculations.convertOzToGallons(
-                Calculations.calculateWaterTotal(user.waters)
-              )}{" "}
-              gallons
+        {/* overview */}
+        <section className="overview">
+          <h3>
+            You've Prept:{" "}
+            <span className="tooltip">
+              {Calculations.calculateWaterTotal(user.waters).toLocaleString()}{" "}
+              ounces
+              <span className="tooltiptext">
+                {Calculations.convertOzToGallons(
+                  Calculations.calculateWaterTotal(user.waters)
+                )}{" "}
+                gallons
+              </span>
             </span>
-          </span>
-        </h2>
+          </h3>
+          <h4>
+            Your household has enough water for approximately{" "}
+            {!isNaN(days) ? days : "0"} day
+            {days > 1 && "s"}
+          </h4>
+        </section>
+
         <div className="inventory_add">
-          <h4>Water Inventory:</h4>
+          <h2>Water Inventory:</h2>
           <button
             className="btn-pink"
             onClick={() => {
@@ -39,15 +50,17 @@ function Water(props) {
         {/* <h4>click card for details</h4> */}
 
         {/* begin water cards */}
-        {user.waters.map((water) => (
-          <WaterCard
-            key={water.id}
-            water={water}
-            user={user}
-            getUserData={getUserData}
-            {...props}
-          />
-        ))}
+        {user.waters
+          .sort((a, b) => a.name - b.name)
+          .map((water) => (
+            <WaterCard
+              key={water.id}
+              water={water}
+              user={user}
+              getUserData={getUserData}
+              {...props}
+            />
+          ))}
         {/* end water cards */}
       </div>
     </>

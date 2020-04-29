@@ -289,6 +289,7 @@ h4 {
   transition: 0.1s ease-in-out;
 }
 .card:hover {
+  background-color: var(--primary-white);
   box-shadow: var(--primary-shadow);
   transform: translateY(-2px);
 }
@@ -395,7 +396,7 @@ button.delete {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 150px;
-  background-color: var(--light-gray);
+  background-color: var(--primary-white);
   color: var(--prept-pink);
   text-align: center;
   padding: 3px 5px;
@@ -406,7 +407,7 @@ button.delete {
   z-index: 1;
 
   top: -3px;
-  left: 0px;
+  left: -0px;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -415,5 +416,5 @@ button.delete {
 }
 
 .tooltip:hover {
-  border-bottom: 2px dotted var(--light-gray);
+  border-bottom: 2px dotted var(--primary-white);
 }

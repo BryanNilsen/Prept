@@ -41,7 +41,11 @@ const WaterAddForm = (props) => {
     ) {
       window.alert("Please complete all fields");
     } else {
+      // prevent multiple form submissions
       setIsLoading(true);
+      // convert input values to integers
+      newWaterItem.qty = parseInt(newWaterItem.qty);
+      newWaterItem.oz = parseInt(newWaterItem.oz);
       APIManager.postNew("waters", newWaterItem)
         .then(() => props.getUserData())
         .then(() => props.history.push("/water"));

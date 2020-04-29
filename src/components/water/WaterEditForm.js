@@ -32,6 +32,9 @@ const WaterEditForm = (props) => {
       window.alert("Please complete all fields");
     } else {
       setIsLoading(true);
+      // convert input values to integers
+      updatedWater.qty = parseInt(updatedWater.qty);
+      updatedWater.oz = parseInt(updatedWater.oz);
       APIManager.updateResource("waters", updatedWater)
         .then(() => props.getUserData())
         .then(() => props.history.push("/water"));

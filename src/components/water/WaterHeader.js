@@ -1,13 +1,11 @@
 import React from "react";
-import Calculations from "../../modules/Calculations";
+// import Calculations from "../../modules/Calculations";
 import water_icon from "../../images/water.png";
 
 function WaterHeader(props) {
   // variables - img src icon / alt
   // variables - h1 text
   // variables - details calculation
-
-  const days = Calculations.calculateDaysOfWaterPerHousehold(props.user);
 
   return (
     <div className="main_content_header">
@@ -18,7 +16,7 @@ function WaterHeader(props) {
         <h1>Water</h1>
       </div>
       <div className="header_details_rt">
-        <h1>{!isNaN(days) ? days : ""}</h1>
+        <h1>{!isNaN(props.days) ? props.days : ""}</h1>
         <h4>days</h4>
       </div>
     </div>
