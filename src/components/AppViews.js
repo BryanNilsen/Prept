@@ -118,7 +118,11 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <HouseholdEditForm getUserData={getUserData} {...props} />
+            <HouseholdEditForm
+              user={user}
+              getUserData={getUserData}
+              {...props}
+            />
           )
         }
       />

@@ -26,6 +26,16 @@ function Water(props) {
         waters: waterSort.sort((a, b) => b.name.localeCompare(a.name)),
       });
     }
+    if (evt.target.value === "sortOzHighLow") {
+      setSortedWaters({
+        waters: waterSort.sort((a, b) => b.qty * b.oz - a.qty * a.oz),
+      });
+    }
+    if (evt.target.value === "sortOzLowHigh") {
+      setSortedWaters({
+        waters: waterSort.sort((a, b) => a.qty * a.oz - b.qty * b.oz),
+      });
+    }
     if (evt.target.value === "") {
       setSortedWaters({
         waters: user.waters,
@@ -45,17 +55,18 @@ function Water(props) {
         {/* overview */}
         <section className="overview">
           <h3>
-            You've Prept:{" "}
-            <span className="tooltip">
-              {Calculations.calculateWaterTotal(user.waters).toLocaleString()}{" "}
-              ounces
-              <span className="tooltiptext">
-                {Calculations.convertOzToGallons(
-                  Calculations.calculateWaterTotal(user.waters)
-                )}{" "}
-                gallons
-              </span>
-            </span>
+            You've Prept: {/* <span className="tooltip"> */}
+            {Calculations.calculateWaterTotal(
+              user.waters
+            ).toLocaleString()}{" "}
+            ounces ||
+            {/* <span className="tooltiptext"> */}
+            {Calculations.convertOzToGallons(
+              Calculations.calculateWaterTotal(user.waters)
+            )}{" "}
+            gallons
+            {/* </span> */}
+            {/* </span> */}
           </h3>
           <h4>
             Your household of has enough water for approximately{" "}
@@ -69,8 +80,10 @@ function Water(props) {
           <h2>Water Inventory:</h2>
           <select onChange={handleSort}>
             <option value="">sort / reset</option>
-            <option value="sortAZName">A to Z</option>
-            <option value="sortZAName">Z to A</option>
+            <option value="sortAZName">Name A-Z</option>
+            <option value="sortZAName">Name Z-A</option>
+            <option value="sortOzHighLow">Oz. high low</option>
+            <option value="sortOzLowHigh">Oz. low high</option>
           </select>
           <button
             className="btn-pink"

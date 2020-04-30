@@ -32,13 +32,24 @@ function Prept() {
     });
   };
 
+  const clearUserData = () => {
+    setUser({
+      id: "",
+      username: "",
+      householdMembers: [],
+      foods: [],
+      waters: [],
+      supplies: [],
+    });
+  };
+
   useEffect(() => {
     checkisAuthenticated();
   }, []);
 
   useEffect(() => {
     getUserData();
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <>
@@ -46,7 +57,10 @@ function Prept() {
         <div></div>
         <div className="grid_nav">
           {isAuthenticated && (
-            <Navbar setIsAuthenticated={setIsAuthenticated} />
+            <Navbar
+              setIsAuthenticated={setIsAuthenticated}
+              clearUserData={clearUserData}
+            />
           )}
         </div>
         <div></div>

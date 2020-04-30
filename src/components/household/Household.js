@@ -30,21 +30,24 @@ const Household = (props) => {
         <div>
           <h2>Total daily needs for your household:</h2>
           <h3>
-            {needsTotals.water} oz. - (
-            {Calculations.convertOzToGallons(needsTotals.water)} gal.) water
-            needed per household per day
+            Water: {needsTotals.water} oz. - (
+            {Calculations.convertOzToGallons(needsTotals.water)} gal.)
           </h3>
-          <h3>Total Calories needed per day: {needsTotals.calories}</h3>
+          <h3>Food: {needsTotals.calories} calories</h3>
         </div>
-        <button
-          className="btn-pink"
-          onClick={() => {
-            props.history.push("/household/new");
-          }}
-        >
-          + add members
-        </button>
-        <h4>click card for details</h4>
+
+        <div className="inventory_add">
+          <h2>Members:</h2>
+          <button
+            className="btn-pink"
+            onClick={() => {
+              props.history.push("/household/new");
+            }}
+          >
+            + add members
+          </button>
+        </div>
+
         {/* begin member cards */}
         {user.householdMembers.map((member) => (
           <HouseholdCard

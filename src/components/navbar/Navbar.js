@@ -7,6 +7,7 @@ const Navbar = (props) => {
     sessionStorage.removeItem("userId");
     props.setIsAuthenticated(false);
     props.history.push("/login");
+    props.clearUserData();
   };
   return (
     <nav>
