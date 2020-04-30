@@ -1,6 +1,6 @@
 :root {
   --primary-color: #186e83;
-  /* --primary-color: #225990; */
+  /* --primary-color: #0d3e6f; */
   --primary-white: #ffffff;
   --prept-pink: #c4236d;
   --light-gray: #f0f0f0;
@@ -71,7 +71,7 @@ code {
 nav {
   padding: 0.5em;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 nav a {
@@ -136,6 +136,7 @@ nav a {
 }
 
 .login_form > h2 {
+  text-align: center;
   margin-top: 0;
   color: var(--prept-pink);
 }
@@ -271,6 +272,12 @@ h4 {
   flex-direction: column;
 }
 
+.inventory_add {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 /* BEGIN GENERIC CARD PROPERTIES*/
 .card {
   border-radius: 0.5rem;
@@ -282,12 +289,25 @@ h4 {
   transition: 0.1s ease-in-out;
 }
 .card:hover {
+  background-color: var(--primary-white);
   box-shadow: var(--primary-shadow);
   transform: translateY(-2px);
 }
 
 .card_title {
+  min-width: 180px;
   margin-bottom: 0.5em;
+}
+
+.card_middle-lg {
+  display: flex;
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+  align-items: center;
+}
+
+.smaller {
+  font-size: 1rem;
 }
 
 .card_status {
@@ -363,4 +383,38 @@ button.delete {
 .icon-credits {
   text-align: center;
   font-size: 0.5em;
+}
+
+/* TOOLTIPS */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted var(--font-gray); /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: var(--primary-white);
+  color: var(--prept-pink);
+  text-align: center;
+  padding: 3px 5px;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+
+  top: -3px;
+  left: -0px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip:hover {
+  border-bottom: 2px dotted var(--primary-white);
 }

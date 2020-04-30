@@ -19,9 +19,14 @@ function WaterCard(props) {
           </div>
           <div className="card_status">
             {props.water.qty} x {props.water.oz} oz. {props.water.container}
-            {props.water.qty > 1 && "s"} ={" "}
-            {(props.water.qty * props.water.oz).toLocaleString()}
+            {props.water.qty > 1 && "s"}
           </div>
+        </div>
+        <div className="card_middle-lg">
+          <strong>
+            {(props.water.qty * props.water.oz).toLocaleString()}
+            <span className="smaller">oz.</span>
+          </strong>
         </div>
         <div className="edit-delete_btns">
           <button

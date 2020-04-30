@@ -23,9 +23,23 @@ function Prept() {
 
   const getUserData = () => {
     const userId = sessionStorage.getItem("userId");
+    if (!userId) {
+      return;
+    }
     return APIManager.getUserWithAllData(userId).then((user) => {
       setUser(user);
       return user;
+    });
+  };
+
+  const clearUserData = () => {
+    setUser({
+      id: "",
+      username: "",
+      householdMembers: [],
+      foods: [],
+      waters: [],
+      supplies: [],
     });
   };
 
@@ -35,7 +49,7 @@ function Prept() {
 
   useEffect(() => {
     getUserData();
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <>
@@ -43,7 +57,10 @@ function Prept() {
         <div></div>
         <div className="grid_nav">
           {isAuthenticated && (
-            <Navbar setIsAuthenticated={setIsAuthenticated} />
+            <Navbar
+              setIsAuthenticated={setIsAuthenticated}
+              clearUserData={clearUserData}
+            />
           )}
         </div>
         <div></div>

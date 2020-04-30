@@ -17,36 +17,36 @@
     {
       "id": 4,
       "userId": 1,
-      "name": "Martin",
-      "dob": "1982-07-28",
-      "weight": "230",
-      "height": "77",
+      "name": "Dad",
+      "dob": "1974-06-28",
+      "weight": 220,
+      "height": 75,
       "gender": "M"
     },
     {
       "userId": 1,
-      "name": "Jane",
-      "dob": "1981-03-21",
-      "weight": "120",
-      "height": "60",
+      "name": "Mom",
+      "dob": "1976-01-25",
+      "weight": 115,
+      "height": 62,
       "id": 5,
       "gender": "F"
     },
     {
       "userId": 1,
       "name": "Ryder",
-      "dob": "2010-08-26",
-      "weight": "69",
-      "height": "54",
+      "dob": "2010-09-30",
+      "weight": 69,
+      "height": 54,
       "id": 6,
       "gender": "M"
     },
     {
       "userId": 1,
-      "name": "Beebop",
-      "dob": "2009-04-09",
-      "weight": "63",
-      "height": "51",
+      "name": "Tiny",
+      "dob": "2012-04-09",
+      "weight": 63,
+      "height": 51,
       "gender": "F",
       "id": 7
     }
@@ -55,7 +55,7 @@
     {
       "id": 0,
       "userId": 1,
-      "name": "Aquafina",
+      "name": "Aquafina Case",
       "qty": 32,
       "oz": 12,
       "container": "bottle"
@@ -72,25 +72,33 @@
       "id": 3,
       "userId": 1,
       "name": "La Croix - Lime",
-      "qty": "15",
+      "qty": 15,
       "oz": 12,
       "container": "can"
     },
     {
       "userId": 1,
-      "name": "Poland Spring",
-      "qty": "32",
-      "oz": "12",
+      "name": "Poland Spring - Case",
+      "qty": 32,
+      "oz": 12,
       "container": "bottle",
       "id": 4
     },
     {
       "userId": 1,
       "name": "Kroger Filtered Water",
-      "qty": "2",
-      "oz": "128",
+      "qty": 2,
+      "oz": 128,
       "container": "jug",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "name": "Poland Spring",
+      "qty": 12,
+      "oz": 16,
+      "container": "bottle",
+      "id": 6
     }
   ],
   "foods": [

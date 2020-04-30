@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Calculations from "../../modules/Calculations";
 import HouseholdCard from "./HouseholdCard";
-import household_icon from "../../images/household.png";
+import HouseholdHeader from "./HouseholdHeader";
 
 const Household = (props) => {
   const user = props.user;
@@ -25,40 +25,30 @@ const Household = (props) => {
   return (
     <>
       <div className="main_content">
-        <div className="main_content_header">
-          <div className="header_lft">
-            <div className="imgwrap">
-              <img
-                src={household_icon}
-                alt="household"
-                className="main_header_img"
-              />
-            </div>
-            <h1>Household</h1>
-          </div>
-        </div>
+        <HouseholdHeader user={user} />
 
-        <div className="card">
-          <h3>{user.householdMembers.length} household members to prep for</h3>
+        <div>
+          <h2>Total daily needs for your household:</h2>
           <h3>
-            {needsTotals.water} oz. - (
-            {Calculations.convertOzToGallons(needsTotals.water)} gal.) water
-            needed per household per day
+            Water: {needsTotals.water} oz. - (
+            {Calculations.convertOzToGallons(needsTotals.water)} gal.)
           </h3>
-          <h3>Total Calories needed per day: {needsTotals.calories}</h3>
+          <h3>Food: {needsTotals.calories} calories</h3>
         </div>
 
-        <button
-          className="btn-pink"
-          onClick={() => {
-            props.history.push("/household/new");
-          }}
-        >
-          + add members
-        </button>
-        <h4>click card for details</h4>
-        {/* begin member cards */}
+        <div className="inventory_add">
+          <h2>Members:</h2>
+          <button
+            className="btn-pink"
+            onClick={() => {
+              props.history.push("/household/new");
+            }}
+          >
+            + add members
+          </button>
+        </div>
 
+        {/* begin member cards */}
         {user.householdMembers.map((member) => (
           <HouseholdCard
             key={member.id}
@@ -68,7 +58,6 @@ const Household = (props) => {
             {...props}
           />
         ))}
-
         {/* end member cards */}
       </div>
     </>
