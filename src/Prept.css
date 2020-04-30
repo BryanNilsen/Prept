@@ -418,3 +418,8 @@ button.delete {
 .tooltip:hover {
   border-bottom: 2px dotted var(--primary-white);
 }
+
+.expired {
+  font-style: italic;
+  color: red;
+}

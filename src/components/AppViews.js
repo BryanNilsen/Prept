@@ -70,7 +70,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Food user={user} getUserData={getUserData} />
+            <Food user={user} getUserData={getUserData} {...props} />
           )
         }
       />

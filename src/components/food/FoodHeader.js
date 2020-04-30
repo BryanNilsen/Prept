@@ -1,18 +1,14 @@
 import React from "react";
-import water_icon from "../../images/water.png";
+import food_icon from "../../images/grocery.png";
 
-function WaterHeader(props) {
-  // variables - img src icon / alt
-  // variables - h1 text
-  // variables - details calculation
-
+function FoodHeader(props) {
   return (
     <div className="main_content_header">
       <div className="header_lft">
         <div className="imgwrap">
-          <img src={water_icon} alt="water" className="main_header_img" />
+          <img src={food_icon} alt="food" className="main_header_img" />
         </div>
-        <h1>Water</h1>
+        <h1>Food</h1>
       </div>
       <div className="header_details_rt">
         <h1>{!isNaN(props.days) ? props.days : "0"}</h1>
@@ -22,4 +18,4 @@ function WaterHeader(props) {
   );
 }
 
-export default WaterHeader;
+export default FoodHeader;
