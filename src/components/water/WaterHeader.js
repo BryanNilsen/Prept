@@ -1,5 +1,4 @@
 import React from "react";
-// import Calculations from "../../modules/Calculations";
 import water_icon from "../../images/water.png";
 
 function WaterHeader(props) {
