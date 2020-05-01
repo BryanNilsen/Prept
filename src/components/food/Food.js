@@ -70,7 +70,7 @@ const Food = (props) => {
           <button
             className="btn-pink"
             onClick={() => {
-              props.history.push("/water/new");
+              props.history.push("/food/new");
             }}
           >
             + add food
