@@ -66,6 +66,21 @@ const Calculations = {
     );
     return Math.floor(waterTotal / waterNeededPerDay);
   },
+  isExpired(food) {
+    const today = new Date();
+    const expDate = new Date(food.expDate);
+    return expDate < today;
+  },
+  isExpiring(food) {
+    const today = new Date();
+    const expDate = new Date(food.expDate);
+    return today < expDate && expDate < this.addDays(today, 10);
+  },
+  addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  },
 };
 
 export default Calculations;

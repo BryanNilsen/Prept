@@ -10,6 +10,7 @@ import WaterAddForm from "./water/WaterAddForm";
 import WaterEditForm from "./water/WaterEditForm";
 import Welcome from "./welcome/Welcome";
 import Food from "./food/Food";
+import FoodAddEdit from "./food/FoodAddEdit";
 
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
@@ -70,7 +71,39 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Food user={user} getUserData={getUserData} />
+            <Food user={user} getUserData={getUserData} {...props} />
+          )
+        }
+      />
+      <Route
+        exact
+        path="/food/edit/:foodId(\d+)"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <FoodAddEdit
+              user={user}
+              getUserData={getUserData}
+              {...props}
+              isEdit={true}
+            />
+          )
+        }
+      />
+      <Route
+        exact
+        path="/food/new"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <FoodAddEdit
+              user={user}
+              getUserData={getUserData}
+              {...props}
+              isEdit={false}
+            />
           )
         }
       />

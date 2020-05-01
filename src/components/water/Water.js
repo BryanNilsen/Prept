@@ -76,6 +76,7 @@ function Water(props) {
           </h4>
         </section>
 
+        {/* inventory */}
         <div className="inventory_add">
           <h2>Water Inventory:</h2>
           <select onChange={handleSort}>
@@ -94,7 +95,6 @@ function Water(props) {
             + add water
           </button>
         </div>
-        {/* <h4>click card for details</h4> */}
 
         {/* begin water cards */}
         {sortedWaters.waters.map((water) => (
