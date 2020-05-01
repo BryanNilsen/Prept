@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Calculations from "../../modules/Calculations";
 import FoodHeader from "./FoodHeader";
 import FoodCard from "./FoodCard";
@@ -6,6 +6,42 @@ import FoodCard from "./FoodCard";
 const Food = (props) => {
   const user = props.user;
   const getUserData = props.getUserData;
+
+  const [sortedFood, setSortedFood] = useState({ foods: [] });
+
+  const handleSort = (evt) => {
+    const foodSort = [...user.foods];
+    if (evt.target.value === "sortAZName") {
+      setSortedFood({
+        foods: foodSort.sort((a, b) => a.name.localeCompare(b.name)),
+      });
+    }
+    if (evt.target.value === "sortZAName") {
+      setSortedFood({
+        foods: foodSort.sort((a, b) => b.name.localeCompare(a.name)),
+      });
+    }
+    if (evt.target.value === "expired") {
+      setSortedFood({
+        foods: foodSort.filter((food) => Calculations.isExpired(food)),
+      });
+    }
+    if (evt.target.value === "expiring") {
+      setSortedFood({
+        foods: foodSort.filter((food) => Calculations.isExpiring(food)),
+      });
+    }
+    if (evt.target.value === "") {
+      setSortedFood({
+        foods: user.foods,
+      });
+    }
+  };
+
+  useEffect(() => {
+    setSortedFood({ foods: user.foods });
+  }, [user.foods]);
+
   return (
     <>
       <div className="main_content">
@@ -23,6 +59,14 @@ const Food = (props) => {
         {/* inventory */}
         <div className="inventory_add">
           <h2>Food Inventory:</h2>
+          <select onChange={handleSort}>
+            <option value="">sort / filter</option>
+            <option value="sortAZName">Name A-Z</option>
+            <option value="sortZAName">Name Z-A</option>
+            <option value="expired">Expired</option>
+            <option value="expiring">Expiring Soon</option>
+          </select>
+          <input placeholder="search" />
           <button
             className="btn-pink"
             onClick={() => {
@@ -35,7 +79,7 @@ const Food = (props) => {
         {/* foodcards */}
         <h4>click card to expand details</h4>
 
-        {user.foods.map((food) => (
+        {sortedFood.foods.map((food) => (
           <FoodCard
             key={food.id}
             food={food}
