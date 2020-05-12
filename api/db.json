@@ -4,13 +4,17 @@
       "id": 0,
       "username": "admin",
       "email": "admin@admin.com",
-      "password": "admin"
+      "password": "admin",
+      "waterGoal": 0,
+      "foodGoal": 0
     },
     {
       "id": 1,
       "username": "bryan",
       "email": "bryan@bryan.com",
-      "password": "bryan"
+      "password": "bryan",
+      "waterGoal": 14,
+      "foodGoal": 21
     }
   ],
   "householdMembers": [
@@ -56,7 +60,7 @@
       "id": 0,
       "userId": 1,
       "name": "Aquafina Case",
-      "qty": 32,
+      "qty": 64,
       "oz": 12,
       "container": "bottle"
     },
@@ -106,7 +110,7 @@
       "id": 0,
       "userId": 1,
       "name": "Kroger Peanut Butter",
-      "qty": 4,
+      "qty": 8,
       "oz": 16,
       "servings": 14,
       "calPerServing": 180,
@@ -154,7 +158,7 @@
       "oz": 3,
       "servings": 2,
       "calPerServing": 190,
-      "expDate": "2020-05-05",
+      "expDate": "2020-05-15",
       "container": "packet"
     },
     {
@@ -163,8 +167,8 @@
       "qty": 1,
       "oz": 16,
       "container": "jar",
-      "servings": "16",
-      "calPerServing": "5",
+      "servings": 16,
+      "calPerServing": 5,
       "expDate": "2020-05-30",
       "id": 6
     }

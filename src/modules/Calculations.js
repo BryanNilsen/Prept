@@ -39,14 +39,14 @@ const Calculations = {
       (acc, cv) => this.getCaloriesPerPersonPerDay(cv) + acc,
       0
     );
-    return caloriesTotal.toLocaleString();
+    return caloriesTotal;
   },
   getTotalWaterNeededPerHouseholdPerDay(membersArray) {
-    const caloriesTotal = membersArray.reduce(
+    const ouncesTotal = membersArray.reduce(
       (acc, cv) => this.getWaterPerPersonPerDay(cv) + acc,
       0
     );
-    return caloriesTotal.toLocaleString();
+    return ouncesTotal;
   },
   convertOzToGallons(oz) {
     return (oz / 128).toFixed(2);
@@ -66,6 +66,19 @@ const Calculations = {
     );
     return Math.floor(waterTotal / waterNeededPerDay);
   },
+  calculateFoodTotal(foodArray) {
+    return foodArray.reduce(
+      (acc, cv) => acc + cv.qty * cv.servings * cv.calPerServing,
+      0
+    );
+  },
+  calculateDaysOfFoodPerHousehold(user) {
+    const foodTotal = this.calculateFoodTotal(user.foods);
+    const foodNeededPerDay = this.getTotalCaloriesNeededPerHouseholdPerDay(
+      user.householdMembers
+    );
+    return Math.floor(foodTotal / foodNeededPerDay);
+  },
   isExpired(food) {
     const today = new Date();
     const expDate = new Date(food.expDate);
@@ -81,11 +94,14 @@ const Calculations = {
     result.setDate(result.getDate() + days);
     return result;
   },
+  goalPercentage(current, goal) {
+    return Math.floor((current / goal) * 100);
+  },
 };
 
 export default Calculations;
 
-// ? WATER CALCULATION: https://www.goodhousekeeping.com/health/diet-nutrition/a46956/how-much-water-should-i-drink/
+// ? WATER CALCULATION based on: https://www.goodhousekeeping.com/health/diet-nutrition/a46956/how-much-water-should-i-drink/
 // Take your weight (in pounds) and divide that by 2.2.
 // Multiply that number depending on your age: If you're younger than 30, multiply by 40. If you're between 30-55, multiply by 35. If you're older than 55, multiply by 30.
 // Divide that sum by 28.3.
@@ -97,7 +113,7 @@ export default Calculations;
 
 // ((person.weight / 2.2) * 40) / 28.3
 
-// ? Mifflin-St Jeor Equation:
+// ? CALORIE CALCULATION based on Mifflin-St Jeor Equation:
 // For men:
 // BMR = 10W + 6.25H - 5A + 5
 // For women:

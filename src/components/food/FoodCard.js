@@ -13,6 +13,17 @@ function FoodCard(props) {
   const expDate = new Date(food.expDate);
   const convertedDate = new Intl.DateTimeFormat("en-US").format(expDate);
 
+  function dateStatus(food) {
+    let status = "";
+    if (Calculations.isExpired(food)) {
+      status += " expired";
+    }
+    if (Calculations.isExpiring(food)) {
+      status += " expiring";
+    }
+    return status;
+  }
+
   return (
     <>
       {/* change classnames */}
@@ -25,15 +36,11 @@ function FoodCard(props) {
             {food.qty} x {food.oz} oz. {food.container}
             {food.qty > 1 && "s"}
           </div>
-          <div
-            className={
-              Calculations.isExpired(food)
-                ? "card_status expired"
-                : "card_status"
-            }
-          >
-            {Calculations.isExpiring(food) && "EXPIRING!! >> "}
-            expires: {convertedDate}
+          <div className={dateStatus(food)}>
+            {Calculations.isExpiring(food) && "EXPIRING SOON: "}
+            {Calculations.isExpired(food) && "EXPIRED: "}
+            {dateStatus(food) === "" && "expires: "}
+            {convertedDate}
           </div>
         </div>
         <div className="card_middle-lg">

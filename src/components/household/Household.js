@@ -33,7 +33,7 @@ const Household = (props) => {
             Water: {needsTotals.water} oz. - (
             {Calculations.convertOzToGallons(needsTotals.water)} gal.)
           </h3>
-          <h3>Food: {needsTotals.calories} calories</h3>
+          <h3>Food: {needsTotals.calories.toLocaleString()} calories</h3>
         </div>
 
         <div className="inventory_add">

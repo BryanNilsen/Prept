@@ -420,6 +420,13 @@ button.delete {
 }
 
 .expired {
+  /* font-weight: bold; */
   font-style: italic;
   color: red;
+}
+
+.expiring {
+  /* font-weight: bold; */
+  font-style: italic;
+  color: purple;
 }

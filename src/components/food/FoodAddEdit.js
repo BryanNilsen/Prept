@@ -30,6 +30,8 @@ const FoodAddEdit = (props) => {
       foodItem.name === "" ||
       foodItem.qty === "" ||
       foodItem.oz === "" ||
+      foodItem.servings === "" ||
+      foodItem.calPerServing === "" ||
       foodItem.container === ""
     ) {
       window.alert("Please complete all fields");
@@ -38,6 +40,8 @@ const FoodAddEdit = (props) => {
       // convert input values to integers
       foodItem.qty = parseInt(foodItem.qty);
       foodItem.oz = parseInt(foodItem.oz);
+      foodItem.servings = parseInt(foodItem.servings);
+      foodItem.calPerServing = parseInt(foodItem.calPerServing);
       if (!props.isEdit) {
         foodItem.userId = parseInt(sessionStorage.getItem("userId"));
         APIManager.postNew("foods", foodItem)
