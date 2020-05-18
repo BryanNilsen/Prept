@@ -97,6 +97,9 @@ const Calculations = {
   goalPercentage(current, goal) {
     return Math.floor((current / goal) * 100);
   },
+  getFoodCalories(food) {
+    return food.qty * food.servings * food.calPerServing;
+  },
 };
 
 export default Calculations;

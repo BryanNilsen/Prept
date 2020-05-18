@@ -23,7 +23,7 @@
       "userId": 1,
       "name": "Dad",
       "dob": "1974-06-28",
-      "weight": 230,
+      "weight": 225,
       "height": 75,
       "gender": "M"
     },
@@ -297,6 +297,30 @@
       "expDate": "2019-10-01",
       "container": "bag",
       "id": 16
+    },
+    {
+      "userId": 1,
+      "name": "Instant Oatmeal (Blueberries & Cream)",
+      "brand": "Quaker",
+      "qty": 2,
+      "oz": 10,
+      "servings": 10,
+      "calPerServing": 110,
+      "expDate": "2020-08-04",
+      "container": "box",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "name": "Green Beans (Cut)",
+      "brand": "Kroger",
+      "qty": 2,
+      "oz": 14,
+      "servings": 3,
+      "calPerServing": 20,
+      "expDate": "2021-12-01",
+      "container": "can",
+      "id": 18
     }
   ],
   "supplies": []

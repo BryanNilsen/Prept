@@ -54,10 +54,8 @@ function FoodCard(props) {
           )}
         </div>
         <div className="card_middle-lg">
-          <strong>
-            {(food.qty * food.servings * food.calPerServing).toLocaleString()}
-            <span className="smaller">cal.</span>
-          </strong>
+          <strong>{Calculations.getFoodCalories(food).toLocaleString()}</strong>
+          <span className="smaller">cal.</span>
         </div>
         <div className="edit-delete_btns">
           <button

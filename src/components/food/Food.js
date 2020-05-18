@@ -23,6 +23,27 @@ const Food = (props) => {
         foods: foodSort.sort((a, b) => a.brand.localeCompare(b.brand)),
       });
     }
+    if (evt.target.value === "sortZABrand") {
+      setSortedFood({
+        foods: foodSort.sort((a, b) => b.brand.localeCompare(a.brand)),
+      });
+    }
+    if (evt.target.value === "sortCalAsc") {
+      setSortedFood({
+        foods: foodSort.sort(
+          (a, b) =>
+            Calculations.getFoodCalories(a) - Calculations.getFoodCalories(b)
+        ),
+      });
+    }
+    if (evt.target.value === "sortCalDesc") {
+      setSortedFood({
+        foods: foodSort.sort(
+          (a, b) =>
+            Calculations.getFoodCalories(b) - Calculations.getFoodCalories(a)
+        ),
+      });
+    }
     if (evt.target.value === "sortZAName") {
       setSortedFood({
         foods: foodSort.sort((a, b) => b.name.localeCompare(a.name)),
@@ -92,6 +113,9 @@ const Food = (props) => {
             <option value="sortAZName">Name A-Z</option>
             <option value="sortZAName">Name Z-A</option>
             <option value="sortAZBrand">Brand A-Z</option>
+            <option value="sortZABrand">Brand Z-A</option>
+            <option value="sortCalAsc">Calories Low-High</option>
+            <option value="sortCalDesc">Calories High-Low</option>
             <option value="expired">Expired</option>
             <option value="expiring">Expiring Soon</option>
           </select>

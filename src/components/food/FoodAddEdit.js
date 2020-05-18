@@ -14,7 +14,7 @@ const FoodAddEdit = (props) => {
     servings: 0,
     calPerServing: 0,
     expDate: "",
-    container: 0,
+    container: "",
   });
   const [isLoading, setIsLoading] = useState(false);
 
