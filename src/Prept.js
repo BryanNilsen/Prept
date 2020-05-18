@@ -71,7 +71,6 @@ function Prept() {
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             user={user}
-            getUserData={getUserData}
           />
         </div>
 
