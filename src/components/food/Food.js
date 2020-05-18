@@ -18,6 +18,11 @@ const Food = (props) => {
         foods: foodSort.sort((a, b) => a.name.localeCompare(b.name)),
       });
     }
+    if (evt.target.value === "sortAZBrand") {
+      setSortedFood({
+        foods: foodSort.sort((a, b) => a.brand.localeCompare(b.brand)),
+      });
+    }
     if (evt.target.value === "sortZAName") {
       setSortedFood({
         foods: foodSort.sort((a, b) => b.name.localeCompare(a.name)),
@@ -45,7 +50,11 @@ const Food = (props) => {
     const input = evt.target.value.toLowerCase();
 
     setSortedFood({
-      foods: foodSort.filter((food) => food.name.toLowerCase().includes(input)),
+      foods: foodSort.filter(
+        (food) =>
+          food.name.toLowerCase().includes(input) ||
+          food.brand.toLowerCase().includes(input)
+      ),
     });
   };
 
@@ -82,6 +91,7 @@ const Food = (props) => {
             <option value="">sort / filter</option>
             <option value="sortAZName">Name A-Z</option>
             <option value="sortZAName">Name Z-A</option>
+            <option value="sortAZBrand">Brand A-Z</option>
             <option value="expired">Expired</option>
             <option value="expiring">Expiring Soon</option>
           </select>
@@ -95,8 +105,9 @@ const Food = (props) => {
             + add food
           </button>
         </div>
+
+        <h5 className="details_header">click card to expand details</h5>
         {/* foodcards */}
-        <h4>click card to expand details</h4>
 
         {sortedFood.foods.map((food) => (
           <FoodCard

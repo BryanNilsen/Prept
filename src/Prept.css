@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #186e83;
-  /* --primary-color: #0d3e6f; */
+  /* --primary-color: #186e83; */
+  --primary-color: #0d3e6f;
   --primary-white: #ffffff;
   --prept-pink: #c4236d;
   --light-gray: #f0f0f0;
@@ -277,13 +277,20 @@ h4 {
   align-items: baseline;
   justify-content: space-between;
 }
+.inventory_add h2 {
+  margin: 0.5em 0;
+}
+
+.details_header {
+  margin: 0.5em 0;
+}
 
 /* BEGIN GENERIC CARD PROPERTIES*/
 .card {
   border-radius: 0.5rem;
   display: flex;
   background-color: var(--primary-white);
-  padding: 1em;
+  padding: 0.5em 1em;
   box-shadow: var(--secondary-shadow);
   margin-bottom: 1em;
   transition: 0.1s ease-in-out;
@@ -325,10 +332,11 @@ h4 {
 .edit-delete_btns button {
   border: none;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   opacity: 0.5;
   color: var(--primary-white);
   border-radius: 5px;
+  margin: 0.2em 0;
 }
 
 .edit-delete_btns button:hover {
@@ -422,11 +430,11 @@ button.delete {
 .expired {
   /* font-weight: bold; */
   font-style: italic;
-  color: red;
+  color: var(--prept-pink);
 }
 
 .expiring {
   /* font-weight: bold; */
   font-style: italic;
-  color: purple;
+  color: var(--primary-color);
 }

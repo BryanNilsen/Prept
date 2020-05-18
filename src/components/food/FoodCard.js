@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import APIManager from "../../modules/APIManager";
 import Calculations from "../../modules/Calculations";
 
 function FoodCard(props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const food = props.food;
+
+  const handleExpand = (evt) => {
+    setIsExpanded(!isExpanded);
+  };
 
   const deleteFood = (id) => {
     APIManager.deleteResource("foods", id).then(() => props.getUserData());
@@ -27,21 +33,25 @@ function FoodCard(props) {
   return (
     <>
       {/* change classnames */}
-      <section className="card household_card">
-        <div className="household_details">
-          <div className="">
-            <strong>{food.name}</strong>
-          </div>
-          <div className="card_status">
-            {food.qty} x {food.oz} oz. {food.container}
-            {food.qty > 1 && "s"}
-          </div>
+      <section className="card household_card" onClick={() => handleExpand()}>
+        <div className="food_details">
           <div className={dateStatus(food)}>
-            {Calculations.isExpiring(food) && "EXPIRING SOON: "}
-            {Calculations.isExpired(food) && "EXPIRED: "}
-            {dateStatus(food) === "" && "expires: "}
-            {convertedDate}
+            <strong>{food.name}</strong> - <em>{food.brand}</em>
           </div>
+          {isExpanded && (
+            <>
+              <div className="card_status">
+                {food.qty} x {food.oz} oz. {food.container}
+                {food.qty > 1 && "s"}
+              </div>
+              <div className={dateStatus(food)}>
+                {Calculations.isExpiring(food) && "EXPIRING SOON: "}
+                {Calculations.isExpired(food) && "EXPIRED: "}
+                {dateStatus(food) === "" && "expires: "}
+                {convertedDate}
+              </div>
+            </>
+          )}
         </div>
         <div className="card_middle-lg">
           <strong>

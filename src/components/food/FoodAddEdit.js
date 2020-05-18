@@ -8,6 +8,7 @@ const FoodAddEdit = (props) => {
   const [food, setFood] = useState({
     userId: 0,
     name: "",
+    brand: "",
     qty: "",
     oz: 0,
     servings: 0,
@@ -28,6 +29,7 @@ const FoodAddEdit = (props) => {
     const foodItem = { ...food };
     if (
       foodItem.name === "" ||
+      foodItem.brand === "" ||
       foodItem.qty === "" ||
       foodItem.oz === "" ||
       foodItem.servings === "" ||

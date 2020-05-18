@@ -109,57 +109,62 @@
     {
       "id": 0,
       "userId": 1,
-      "name": "Kroger Peanut Butter",
+      "name": "Peanut Butter",
       "qty": 8,
       "oz": 16,
       "servings": 14,
       "calPerServing": 180,
       "expDate": "2020-11-24",
-      "container": "jar"
+      "container": "jar",
+      "brand": "Kroger"
     },
     {
       "id": 2,
       "userId": 1,
-      "name": "Bush's Kidney Beans",
+      "name": "Kidney Beans",
       "qty": 3,
       "oz": 16,
-      "servings": 3.5,
+      "servings": 3,
       "calPerServing": 120,
       "expDate": "2022-01-01",
-      "container": "can"
+      "container": "can",
+      "brand": "Bush's"
     },
     {
       "id": 3,
       "userId": 1,
-      "name": "Maruchan Ramen - Chicken",
+      "name": "Ramen Noodles (Chicken)",
       "qty": 12,
       "oz": 3,
       "servings": 2,
       "calPerServing": 190,
       "expDate": "2021-04-15",
-      "container": "packet"
+      "container": "packet",
+      "brand": "Maruchan Ramen"
     },
     {
       "id": 4,
       "userId": 1,
-      "name": "Maruchan Ramen - Chicken",
+      "name": "Ramen Noodles (Beef)",
       "qty": 12,
       "oz": 3,
       "servings": 2,
       "calPerServing": 190,
-      "expDate": "2019-04-15",
-      "container": "packet"
+      "expDate": "2021-04-14",
+      "container": "packet",
+      "brand": "Maruchan Ramen"
     },
     {
       "id": 5,
       "userId": 1,
-      "name": "Maruchan Ramen - Chicken",
+      "name": "Ramen Noodles (Chicken)",
       "qty": 12,
       "oz": 3,
       "servings": 2,
       "calPerServing": 190,
-      "expDate": "2020-05-15",
-      "container": "packet"
+      "expDate": "2020-05-25",
+      "container": "packet",
+      "brand": "Maruchan Ramen"
     },
     {
       "userId": 1,
@@ -170,7 +175,128 @@
       "servings": 16,
       "calPerServing": 5,
       "expDate": "2020-05-30",
-      "id": 6
+      "id": 6,
+      "brand": "Kroger"
+    },
+    {
+      "userId": 1,
+      "name": "Chunk Light Tuna",
+      "qty": 7,
+      "oz": 5,
+      "servings": 1,
+      "calPerServing": 80,
+      "expDate": "2022-08-12",
+      "container": "can",
+      "id": 7,
+      "brand": "Kroger"
+    },
+    {
+      "userId": 1,
+      "name": "Chicken Noodle Soup",
+      "qty": 2,
+      "oz": 19,
+      "servings": 2,
+      "calPerServing": 90,
+      "expDate": "2021-12-25",
+      "container": "can",
+      "id": 8,
+      "brand": "Progresso"
+    },
+    {
+      "userId": 1,
+      "name": "Lentil Soup",
+      "brand": "Amy's Organic",
+      "qty": 4,
+      "oz": 14,
+      "servings": 1,
+      "calPerServing": 300,
+      "expDate": "2022-06-01",
+      "container": "can",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "name": "Black Beans",
+      "brand": "Kroger",
+      "qty": 4,
+      "oz": 15,
+      "servings": 3,
+      "calPerServing": 120,
+      "expDate": "2022-01-07",
+      "container": "can",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "name": "Granola Bars (Chocolate Chip)",
+      "brand": "Quaker",
+      "qty": 1,
+      "oz": 58,
+      "servings": 58,
+      "calPerServing": 100,
+      "expDate": "2020-09-29",
+      "container": "box",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "name": "Lentils",
+      "brand": "Conchita",
+      "qty": 1,
+      "oz": 12,
+      "servings": 9,
+      "calPerServing": 134,
+      "expDate": "2019-11-01",
+      "container": "bag",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "name": "Long Grain Rice",
+      "brand": "Mahatma",
+      "qty": 1,
+      "oz": 32,
+      "servings": 20,
+      "calPerServing": 160,
+      "expDate": "2021-12-01",
+      "container": "bag",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "name": "Thai Jasmine Rice",
+      "brand": "Kroger",
+      "qty": 1,
+      "oz": 32,
+      "servings": 20,
+      "calPerServing": 160,
+      "expDate": "2021-01-07",
+      "container": "bag",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "name": "Long Grain Brown Rice",
+      "brand": "Kroger",
+      "qty": 1,
+      "oz": 32,
+      "servings": 20,
+      "calPerServing": 160,
+      "expDate": "2021-01-29",
+      "container": "bag",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "name": "Whole Grain Brown Rice",
+      "brand": "Publix",
+      "qty": 1,
+      "oz": 16,
+      "servings": 11,
+      "calPerServing": 150,
+      "expDate": "2019-10-01",
+      "container": "bag",
+      "id": 16
     }
   ],
   "supplies": []
