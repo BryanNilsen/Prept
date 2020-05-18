@@ -8,12 +8,13 @@ const FoodAddEdit = (props) => {
   const [food, setFood] = useState({
     userId: 0,
     name: "",
+    brand: "",
     qty: "",
     oz: 0,
     servings: 0,
     calPerServing: 0,
     expDate: "",
-    container: 0,
+    container: "",
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,8 +29,11 @@ const FoodAddEdit = (props) => {
     const foodItem = { ...food };
     if (
       foodItem.name === "" ||
+      foodItem.brand === "" ||
       foodItem.qty === "" ||
       foodItem.oz === "" ||
+      foodItem.servings === "" ||
+      foodItem.calPerServing === "" ||
       foodItem.container === ""
     ) {
       window.alert("Please complete all fields");
@@ -38,6 +42,8 @@ const FoodAddEdit = (props) => {
       // convert input values to integers
       foodItem.qty = parseInt(foodItem.qty);
       foodItem.oz = parseInt(foodItem.oz);
+      foodItem.servings = parseInt(foodItem.servings);
+      foodItem.calPerServing = parseInt(foodItem.calPerServing);
       if (!props.isEdit) {
         foodItem.userId = parseInt(sessionStorage.getItem("userId"));
         APIManager.postNew("foods", foodItem)

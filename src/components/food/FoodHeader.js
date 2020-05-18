@@ -11,7 +11,9 @@ function FoodHeader(props) {
         <h1>Food</h1>
       </div>
       <div className="header_details_rt">
-        <h1>{!isNaN(props.days) ? props.days : "0"}</h1>
+        <h1>
+          {!isNaN(props.days) ? props.days : "0"} / {props.user.foodGoal}
+        </h1>
         <h4>days</h4>
       </div>
     </div>

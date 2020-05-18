@@ -18,6 +18,19 @@ function FoodForm(props) {
             value={props.food.name}
           />
         </div>
+        <div className="form">
+          {/* NAME INPUT */}
+          <label htmlFor="brand">Brand:</label>
+          <input
+            className="form_inputs"
+            type="text"
+            required
+            onChange={props.handleFieldChange}
+            id="brand"
+            placeholder="Brand"
+            value={props.food.brand}
+          />
+        </div>
         {/* QUANTITY INPUT */}
         <div className="form">
           <label htmlFor="qty">Quantity:</label>
