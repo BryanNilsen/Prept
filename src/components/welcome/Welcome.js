@@ -50,7 +50,14 @@ function Welcome(props) {
             ) : (
               <>
                 <img src={water_icon} alt="water" />
-                <button className="btn-pink">+ add water</button>
+                <button
+                  className="btn-pink"
+                  onClick={() => {
+                    props.history.push("/water/new");
+                  }}
+                >
+                  + add water
+                </button>
               </>
             )}
           </div>
@@ -62,8 +69,24 @@ function Welcome(props) {
             food you have for your household.
           </p>
           <div className="welcome_card_right">
-            <img src={food_icon} alt="food" />
-            <button className="btn-pink">+ add food</button>
+            {user.foods.length > 0 ? (
+              <>
+                <img src={checkmark_icon} alt="checkmark" />
+                <div>complete</div>
+              </>
+            ) : (
+              <>
+                <img src={food_icon} alt="food" />
+                <button
+                  className="btn-pink"
+                  onClick={() => {
+                    props.history.push("/food/new");
+                  }}
+                >
+                  + add food
+                </button>
+              </>
+            )}
           </div>
         </section>
         <section id="supplies_card" className="card welcome_card">
@@ -73,8 +96,17 @@ function Welcome(props) {
             to your inventory to know when it’s time to re-stock.
           </p>
           <div className="welcome_card_right">
-            <img src={supplies_icon} alt="food" />
-            <button className="btn-pink">+ add supplies</button>
+            {user.supplies.length > 0 ? (
+              <>
+                <img src={checkmark_icon} alt="checkmark" />
+                <div>complete</div>
+              </>
+            ) : (
+              <>
+                <img src={supplies_icon} alt="food" />
+                <button className="btn-pink">+ add supplies</button>
+              </>
+            )}
           </div>
         </section>
         {/* end inventory cards */}

@@ -114,7 +114,7 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <Welcome user={user} />
+            <Welcome user={user} {...props} />
           )
         }
       />
