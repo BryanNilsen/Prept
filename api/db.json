@@ -333,6 +333,90 @@
       "expDate": "2020-12-08",
       "container": "jar",
       "id": 19
+    },
+    {
+      "userId": 1,
+      "name": "Peanut Butter - Crunchy",
+      "brand": "Peter Pan",
+      "qty": 1,
+      "oz": 40,
+      "servings": 35,
+      "calPerServing": 200,
+      "expDate": "2021-02-12",
+      "container": "jar",
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "name": "Old Fashioned Oatmeal",
+      "brand": "Quaker Oats",
+      "qty": 1,
+      "oz": 42,
+      "servings": 30,
+      "calPerServing": 150,
+      "expDate": "2020-04-15",
+      "container": "carton",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "name": "Peanut Butter - Crunchy",
+      "brand": "Kroger",
+      "qty": 1,
+      "oz": 28,
+      "servings": 24,
+      "calPerServing": 180,
+      "expDate": "2020-05-18",
+      "container": "jar",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "name": "Peanut Butter - Creamy",
+      "brand": "Jif",
+      "qty": 1,
+      "oz": 48,
+      "servings": 41,
+      "calPerServing": 190,
+      "expDate": "2021-11-20",
+      "container": "jar",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "name": "Crackers - Whole Wheat",
+      "brand": "Ritz",
+      "qty": 3,
+      "oz": 12,
+      "servings": 24,
+      "calPerServing": 70,
+      "expDate": "2020-07-09",
+      "container": "box",
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "name": "Mashed Potatoes",
+      "brand": "Hungry Jack",
+      "qty": 3,
+      "oz": 15,
+      "servings": 20,
+      "calPerServing": 80,
+      "expDate": "2021-01-17",
+      "container": "box",
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "name": "Crackers",
+      "brand": "Club",
+      "qty": 3,
+      "oz": 13,
+      "servings": 28,
+      "calPerServing": 70,
+      "expDate": "2021-02-06",
+      "container": "box",
+      "id": 26
     }
   ],
   "supplies": []
