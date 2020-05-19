@@ -107,14 +107,14 @@
   ],
   "foods": [
     {
-      "id": 0,
+      "id": 1,
       "userId": 1,
-      "name": "Peanut Butter",
-      "qty": 8,
+      "name": "Peanut Butter - Creamy",
+      "qty": 3,
       "oz": 16,
       "servings": 14,
       "calPerServing": 180,
-      "expDate": "2020-11-24",
+      "expDate": "2020-12-23",
       "container": "jar",
       "brand": "Kroger"
     },
@@ -321,6 +321,18 @@
       "expDate": "2021-12-01",
       "container": "can",
       "id": 18
+    },
+    {
+      "userId": 1,
+      "name": "Peanut Butter - Crunchy",
+      "brand": "Kroger",
+      "qty": 3,
+      "oz": 16,
+      "servings": 14,
+      "calPerServing": 180,
+      "expDate": "2020-12-08",
+      "container": "jar",
+      "id": 19
     }
   ],
   "supplies": []

@@ -70,6 +70,7 @@ function Prept() {
           <AppViews
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
+            getUserData={getUserData}
             user={user}
           />
         </div>
