@@ -41,8 +41,14 @@ function FoodCard(props) {
           {isExpanded && (
             <>
               <div className="card_status">
-                {food.qty} x {food.oz} oz. {food.container}
+                {food.qty} x {food.oz}oz. {food.container}
                 {food.qty > 1 && "s"}
+              </div>
+              <div className="card_status">
+                {food.servings} serving{food.servings > 1 && "s"}
+              </div>
+              <div className="card_status">
+                {food.calPerServing} calories per serving
               </div>
               <div className={dateStatus(food)}>
                 {Calculations.isExpiring(food) && "EXPIRING SOON: "}

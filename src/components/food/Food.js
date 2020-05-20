@@ -11,7 +11,34 @@ const Food = (props) => {
 
   const goalPercentage = Calculations.goalPercentage(days, user.foodGoal);
 
+  const sortSelect = document.getElementById("sort_select");
+  const filterSelect = document.getElementById("filter_select");
+  const searchInput = document.getElementById("search_input");
+
+  // event handlers
+  const handleFilter = (evt) => {
+    sortSelect.value = "";
+    searchInput.value = "";
+    const foodFilter = [...user.foods];
+    if (evt.target.value === "expired") {
+      setSortedFood({
+        foods: foodFilter.filter((food) => Calculations.isExpired(food)),
+      });
+    }
+    if (evt.target.value === "expiring") {
+      setSortedFood({
+        foods: foodFilter.filter((food) => Calculations.isExpiring(food)),
+      });
+    }
+    if (evt.target.value === "") {
+      setSortedFood({
+        foods: user.foods,
+      });
+    }
+  };
   const handleSort = (evt) => {
+    filterSelect.value = "";
+    searchInput.value = "";
     const foodSort = [...user.foods];
     if (evt.target.value === "sortAZName") {
       setSortedFood({
@@ -36,6 +63,11 @@ const Food = (props) => {
         ),
       });
     }
+    if (evt.target.value === "sortExpDate") {
+      setSortedFood({
+        foods: foodSort.sort((a, b) => a.expDate.localeCompare(b.expDate)),
+      });
+    }
     if (evt.target.value === "sortCalDesc") {
       setSortedFood({
         foods: foodSort.sort(
@@ -49,24 +81,15 @@ const Food = (props) => {
         foods: foodSort.sort((a, b) => b.name.localeCompare(a.name)),
       });
     }
-    if (evt.target.value === "expired") {
-      setSortedFood({
-        foods: foodSort.filter((food) => Calculations.isExpired(food)),
-      });
-    }
-    if (evt.target.value === "expiring") {
-      setSortedFood({
-        foods: foodSort.filter((food) => Calculations.isExpiring(food)),
-      });
-    }
     if (evt.target.value === "") {
       setSortedFood({
         foods: user.foods,
       });
     }
   };
-
   const handleSearch = (evt) => {
+    sortSelect.value = "";
+    filterSelect.value = "";
     const foodSort = [...user.foods];
     const input = evt.target.value.toLowerCase();
 
@@ -95,8 +118,8 @@ const Food = (props) => {
             calories
           </h3>
           <h4>
-            Your household of has enough food for approximately{" "}
-            {!isNaN(days) ? days : "0"} days for {user.householdMembers.length}{" "}
+            That's enough food for approximately {!isNaN(days) ? days : "0"}{" "}
+            days for {user.householdMembers.length}{" "}
             {user.householdMembers.length > 1 ? "people" : "person"}.
           </h4>
           <h4>
@@ -108,18 +131,26 @@ const Food = (props) => {
         {/* inventory */}
         <div className="inventory_add">
           <h2>Food Inventory:</h2>
-          <select onChange={handleSort}>
-            <option value="">sort / filter</option>
+          <select onChange={handleSort} id="sort_select">
+            <option value="">Sort</option>
             <option value="sortAZName">Name A-Z</option>
             <option value="sortZAName">Name Z-A</option>
             <option value="sortAZBrand">Brand A-Z</option>
             <option value="sortZABrand">Brand Z-A</option>
             <option value="sortCalAsc">Calories Low-High</option>
             <option value="sortCalDesc">Calories High-Low</option>
+            <option value="sortExpDate">Expiration Date</option>
+          </select>
+          <select onChange={handleFilter} id="filter_select">
+            <option value="">Filter</option>
             <option value="expired">Expired</option>
             <option value="expiring">Expiring Soon</option>
           </select>
-          <input onChange={handleSearch} placeholder="search" />
+          <input
+            onChange={handleSearch}
+            placeholder="search"
+            id="search_input"
+          />
           <button
             className="btn-pink"
             onClick={() => {

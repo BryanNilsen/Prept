@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import APIManager from "../../modules/APIManager";
 import FoodForm from "./FoodForm";
 import FoodHeader from "./FoodHeader";
+import Calculations from "../../modules/Calculations";
 
 const FoodAddEdit = (props) => {
   const user = props.user;
+  const days = Calculations.calculateDaysOfFoodPerHousehold(props.user);
   const [food, setFood] = useState({
     userId: 0,
     name: "",
@@ -72,7 +74,7 @@ const FoodAddEdit = (props) => {
   return (
     <>
       <div className="main_content">
-        <FoodHeader user={user} />
+        <FoodHeader user={user} days={days} />
         <FoodForm
           food={food}
           handleFieldChange={handleFieldChange}

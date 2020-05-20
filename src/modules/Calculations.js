@@ -87,7 +87,7 @@ const Calculations = {
   isExpiring(food) {
     const today = new Date();
     const expDate = new Date(food.expDate);
-    return today < expDate && expDate < this.addDays(today, 10);
+    return today < expDate && expDate < this.addDays(today, 20);
   },
   addDays(date, days) {
     const result = new Date(date);
