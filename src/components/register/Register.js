@@ -22,17 +22,39 @@ function Register(props) {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-  // Check for matching email/password and set userId to sessionStorage
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log("You clicked register");
-    // findUserFromLogin().then((result) => {
-    //   if (result.length > 0) {
-    //     sessionStorage.setItem("userId", result[0].id);
-    //     props.setIsAuthenticated(true);
-    //     props.history.push("/welcome");
-    //   }
-    // });
+    // Check all inputs are completed
+    // TODO refactor alert to better notification
+    if (
+      credentials.email === "" ||
+      credentials.password === "" ||
+      credentials.username === ""
+    ) {
+      alert("All fields required");
+      return;
+    }
+    // Check for email in system
+    checkIfEmailExists().then((res) => {
+      console.log(res);
+      if (res.length > 0) {
+        alert("That email is already in our system");
+      } else {
+        const newUser = {
+          email: credentials.email,
+          password: credentials.password,
+          username: credentials.username,
+          waterGoal: 0,
+          foodGoal: 0,
+        };
+        APIManager.postNew("users", newUser).then((result) => {
+          console.log(result);
+          sessionStorage.setItem("userId", result.id);
+          props.setIsAuthenticated(true);
+          props.history.push("/welcome");
+        });
+      }
+    });
   };
 
   return (

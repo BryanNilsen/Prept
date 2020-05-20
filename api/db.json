@@ -15,6 +15,14 @@
       "password": "bryan",
       "waterGoal": 14,
       "foodGoal": 21
+    },
+    {
+      "email": "testuser",
+      "password": "2345",
+      "username": "usey",
+      "waterGoal": 0,
+      "foodGoal": 0,
+      "id": 2
     }
   ],
   "householdMembers": [

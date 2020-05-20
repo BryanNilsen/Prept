@@ -17,6 +17,8 @@ function Login(props) {
   // Check for matching email/password and set userId to sessionStorage
   const handleLogin = (e) => {
     e.preventDefault();
+    // TODO: check all fields are completed before proceeding
+
     APIManager.authenticateUser(credentials.email, credentials.password).then(
       (result) => {
         if (result.length > 0) {

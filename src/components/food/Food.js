@@ -118,8 +118,8 @@ const Food = (props) => {
             calories
           </h3>
           <h4>
-            That's enough food for approximately {!isNaN(days) ? days : "0"}{" "}
-            days for {user.householdMembers.length}{" "}
+            That's enough food for approximately {days} days for{" "}
+            {user.householdMembers.length}{" "}
             {user.householdMembers.length > 1 ? "people" : "person"}.
           </h4>
           <h4>
