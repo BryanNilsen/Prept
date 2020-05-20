@@ -4,8 +4,16 @@ import email from "../../images/email.png";
 import key from "../../images/key.png";
 import APIManager from "../../modules/APIManager";
 
-function Login(props) {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+function Register(props) {
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
+
+  const checkIfEmailExists = () => {
+    return APIManager.getUserByEmail(credentials.email);
+  };
 
   // EVENT HANDLERS
   // Update state whenever an input field is edited
@@ -15,25 +23,16 @@ function Login(props) {
     setCredentials(stateToChange);
   };
   // Check for matching email/password and set userId to sessionStorage
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    APIManager.authenticateUser(credentials.email, credentials.password).then(
-      (result) => {
-        if (result.length > 0) {
-          sessionStorage.setItem("userId", result[0].id);
-          props.setIsAuthenticated(true);
-          props.history.push("/welcome");
-        } else {
-          // need better handling here
-          alert("Please try again");
-          clearForm();
-        }
-      }
-    );
-  };
-
-  const clearForm = () => {
-    setCredentials({ email: "", password: "" });
+    console.log("You clicked register");
+    // findUserFromLogin().then((result) => {
+    //   if (result.length > 0) {
+    //     sessionStorage.setItem("userId", result[0].id);
+    //     props.setIsAuthenticated(true);
+    //     props.history.push("/welcome");
+    //   }
+    // });
   };
 
   return (
@@ -46,7 +45,7 @@ function Login(props) {
         <p className="logo_tagline">your emergency inventory manager</p>
         <div className="login_form_container">
           <form className="login_form">
-            <h2>Login</h2>
+            <h2>Register</h2>
             <div className="login_inputs">
               <img src={email} alt="email" className="input_icon" />
               <input
@@ -55,7 +54,16 @@ function Login(props) {
                 placeholder="email"
                 onChange={handleFieldChange}
                 required
-                value={credentials.email}
+              />
+            </div>
+            <div className="login_inputs">
+              <img src={email} alt="username" className="input_icon" />
+              <input
+                type="text"
+                id="username"
+                placeholder="username"
+                onChange={handleFieldChange}
+                required
               />
             </div>
             <div className="login_inputs">
@@ -66,25 +74,24 @@ function Login(props) {
                 placeholder="password"
                 onChange={handleFieldChange}
                 required
-                value={credentials.password}
               />
             </div>
             <p className="forgot_pwd">forgot password?</p>
-            <button type="submit" className="btn-pink" onClick={handleLogin}>
-              login
+            <button type="submit" className="btn-pink" onClick={handleRegister}>
+              register
             </button>
           </form>
         </div>
       </div>
       <div className="center">
-        <p>not registered?</p>
+        <p>already registered?</p>
         <h4 className="login_create_link">
           <button
             onClick={() => {
-              props.history.push("/register");
+              props.history.push("/login");
             }}
           >
-            Register New Account
+            Log In
           </button>
         </h4>
       </div>
@@ -92,4 +99,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Register;

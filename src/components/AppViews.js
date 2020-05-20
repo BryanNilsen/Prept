@@ -5,6 +5,7 @@ import Household from "./household/Household";
 import HouseholdAddForm from "./household/HouseholdAddForm";
 import HouseholdEditForm from "./household/HouseholdEditForm";
 import Login from "./login/Login";
+import Register from "./register/Register";
 import Water from "./water/Water";
 import WaterAddForm from "./water/WaterAddForm";
 import WaterEditForm from "./water/WaterEditForm";
@@ -164,6 +165,18 @@ const AppViews = (props) => {
         render={(props) => {
           return (
             <Login
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+              {...props}
+            />
+          );
+        }}
+      />
+      <Route
+        path="/register"
+        render={(props) => {
+          return (
+            <Register
               isAuthenticated={isAuthenticated}
               setIsAuthenticated={setIsAuthenticated}
               {...props}
