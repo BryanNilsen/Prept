@@ -24,7 +24,13 @@ const APIManager = {
     //   return user;
     // });
   },
-  getUserByEmail(email, password) {
+  getUserByEmail(email) {
+    let lowerEmail = email.toLowerCase();
+    return fetch(`${APIUrl}/users?email=${lowerEmail}`).then((response) =>
+      response.json()
+    );
+  },
+  authenticateUser(email, password) {
     let lowerEmail = email.toLowerCase();
     return fetch(
       `${APIUrl}/users?email=${lowerEmail}&password=${password}`

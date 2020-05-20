@@ -77,7 +77,8 @@ const Calculations = {
     const foodNeededPerDay = this.getTotalCaloriesNeededPerHouseholdPerDay(
       user.householdMembers
     );
-    return Math.floor(foodTotal / foodNeededPerDay);
+    const days = Math.floor(foodTotal / foodNeededPerDay);
+    return !isNaN(days) ? days : 0;
   },
   isExpired(food) {
     const today = new Date();
@@ -95,7 +96,8 @@ const Calculations = {
     return result;
   },
   goalPercentage(current, goal) {
-    return Math.floor((current / goal) * 100);
+    const percentage = Math.floor((current / goal) * 100);
+    return !isNaN(percentage) ? percentage : 0;
   },
   getFoodCalories(food) {
     return food.qty * food.servings * food.calPerServing;

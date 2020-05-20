@@ -4,8 +4,16 @@ import email from "../../images/email.png";
 import key from "../../images/key.png";
 import APIManager from "../../modules/APIManager";
 
-function Login(props) {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+function Register(props) {
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
+
+  const checkIfEmailExists = () => {
+    return APIManager.getUserByEmail(credentials.email);
+  };
 
   // EVENT HANDLERS
   // Update state whenever an input field is edited
@@ -14,28 +22,39 @@ function Login(props) {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
-  // Check for matching email/password and set userId to sessionStorage
-  const handleLogin = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    // TODO: check all fields are completed before proceeding
-
-    APIManager.authenticateUser(credentials.email, credentials.password).then(
-      (result) => {
-        if (result.length > 0) {
-          sessionStorage.setItem("userId", result[0].id);
+    // Check all inputs are completed
+    // TODO refactor alert to better notification
+    if (
+      credentials.email === "" ||
+      credentials.password === "" ||
+      credentials.username === ""
+    ) {
+      alert("All fields required");
+      return;
+    }
+    // Check for email in system
+    checkIfEmailExists().then((res) => {
+      console.log(res);
+      if (res.length > 0) {
+        alert("That email is already in our system");
+      } else {
+        const newUser = {
+          email: credentials.email,
+          password: credentials.password,
+          username: credentials.username,
+          waterGoal: 0,
+          foodGoal: 0,
+        };
+        APIManager.postNew("users", newUser).then((result) => {
+          console.log(result);
+          sessionStorage.setItem("userId", result.id);
           props.setIsAuthenticated(true);
           props.history.push("/welcome");
-        } else {
-          // need better handling here
-          alert("Please try again");
-          clearForm();
-        }
+        });
       }
-    );
-  };
-
-  const clearForm = () => {
-    setCredentials({ email: "", password: "" });
+    });
   };
 
   return (
@@ -48,7 +67,7 @@ function Login(props) {
         <p className="logo_tagline">your emergency inventory manager</p>
         <div className="login_form_container">
           <form className="login_form">
-            <h2>Login</h2>
+            <h2>Register</h2>
             <div className="login_inputs">
               <img src={email} alt="email" className="input_icon" />
               <input
@@ -57,7 +76,16 @@ function Login(props) {
                 placeholder="email"
                 onChange={handleFieldChange}
                 required
-                value={credentials.email}
+              />
+            </div>
+            <div className="login_inputs">
+              <img src={email} alt="username" className="input_icon" />
+              <input
+                type="text"
+                id="username"
+                placeholder="username"
+                onChange={handleFieldChange}
+                required
               />
             </div>
             <div className="login_inputs">
@@ -68,25 +96,24 @@ function Login(props) {
                 placeholder="password"
                 onChange={handleFieldChange}
                 required
-                value={credentials.password}
               />
             </div>
             <p className="forgot_pwd">forgot password?</p>
-            <button type="submit" className="btn-pink" onClick={handleLogin}>
-              login
+            <button type="submit" className="btn-pink" onClick={handleRegister}>
+              register
             </button>
           </form>
         </div>
       </div>
       <div className="center">
-        <p>not registered?</p>
+        <p>already registered?</p>
         <h4 className="login_create_link">
           <button
             onClick={() => {
-              props.history.push("/register");
+              props.history.push("/login");
             }}
           >
-            Register New Account
+            Log In
           </button>
         </h4>
       </div>
@@ -94,4 +121,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Register;
