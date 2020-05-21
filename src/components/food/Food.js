@@ -130,7 +130,7 @@ const Food = (props) => {
 
         {/* inventory */}
         <div className="inventory_add">
-          <h2>Food Inventory:</h2>
+          <h2>Inventory:</h2>
           <select onChange={handleSort} id="sort_select">
             <option value="">Sort</option>
             <option value="sortAZName">Name A-Z</option>

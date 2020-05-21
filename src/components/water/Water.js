@@ -78,7 +78,7 @@ function Water(props) {
 
         {/* inventory */}
         <div className="inventory_add">
-          <h2>Water Inventory:</h2>
+          <h2>Inventory:</h2>
           <select onChange={handleSort}>
             <option value="">sort / reset</option>
             <option value="sortAZName">Name A-Z</option>
