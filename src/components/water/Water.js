@@ -7,9 +7,6 @@ function Water(props) {
   const user = props.user;
   const getUserData = props.getUserData;
 
-  // const sortAZName = (a, b) => a.name.localeCompare(b.name);
-  // const sortZAName = (a, b) => b.name.localeCompare(a.name);
-
   const [sortedWaters, setSortedWaters] = useState({ waters: [] });
 
   const days = Calculations.calculateDaysOfWaterPerHousehold(props.user);

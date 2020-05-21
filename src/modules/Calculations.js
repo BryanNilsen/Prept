@@ -64,7 +64,8 @@ const Calculations = {
     const waterNeededPerDay = this.getTotalWaterNeededPerHouseholdPerDay(
       user.householdMembers
     );
-    return Math.floor(waterTotal / waterNeededPerDay);
+    const days = Math.floor(waterTotal / waterNeededPerDay);
+    return !isNaN(days) ? days : 0;
   },
   calculateFoodTotal(foodArray) {
     return foodArray.reduce(

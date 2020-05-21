@@ -71,7 +71,7 @@ const WaterAddEdit = (props) => {
           water={water}
           handleFieldChange={handleFieldChange}
           isLoading={isLoading}
-          addEditFood={addEditWater}
+          addEditWater={addEditWater}
           isEdit={props.isEdit}
         />
       </div>
