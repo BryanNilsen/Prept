@@ -31,7 +31,7 @@
       "userId": 1,
       "name": "Dad",
       "dob": "1974-06-28",
-      "weight": 225,
+      "weight": 223,
       "height": 75,
       "gender": "M"
     },
@@ -119,6 +119,14 @@
       "oz": 20,
       "container": "bottle",
       "id": 7
+    },
+    {
+      "userId": 1,
+      "name": "Evian",
+      "qty": 1,
+      "oz": 16,
+      "container": "bottle",
+      "id": 8
     }
   ],
   "foods": [

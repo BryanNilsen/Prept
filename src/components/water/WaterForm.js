@@ -58,7 +58,7 @@ function WaterForm(props) {
           type="button"
           className="btn-pink"
           disabled={props.isLoading}
-          onClick={props.editWater}
+          onClick={props.addEditWater}
         >
           {props.isEdit ? "Edit" : "Add"}
         </button>

@@ -7,11 +7,11 @@ import HouseholdEditForm from "./household/HouseholdEditForm";
 import Login from "./login/Login";
 import Register from "./register/Register";
 import Water from "./water/Water";
-import WaterAddForm from "./water/WaterAddForm";
-import WaterEditForm from "./water/WaterEditForm";
+import WaterAddEdit from "./water/WaterAddEdit";
 import Welcome from "./welcome/Welcome";
 import Food from "./food/Food";
 import FoodAddEdit from "./food/FoodAddEdit";
+import Supplies from "./supplies/Supplies";
 
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
@@ -50,7 +50,12 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <WaterAddForm user={user} getUserData={getUserData} {...props} />
+            <WaterAddEdit
+              user={user}
+              getUserData={getUserData}
+              {...props}
+              isEdit={false}
+            />
           )
         }
       />
@@ -61,7 +66,12 @@ const AppViews = (props) => {
           !isAuthenticated ? (
             props.history.replace("/login")
           ) : (
-            <WaterEditForm user={user} getUserData={getUserData} {...props} />
+            <WaterAddEdit
+              user={user}
+              getUserData={getUserData}
+              {...props}
+              isEdit={true}
+            />
           )
         }
       />
@@ -157,6 +167,18 @@ const AppViews = (props) => {
               getUserData={getUserData}
               {...props}
             />
+          )
+        }
+      />
+
+      <Route
+        exact
+        path="/supplies"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <Supplies user={user} getUserData={getUserData} {...props} />
           )
         }
       />
