@@ -20,15 +20,17 @@ function HouseholdForm(props) {
           </div>
           <div className="form">
             <label htmlFor="gender">Gender:</label>
-            <input
+            <select
               className="form_inputs"
-              type="text"
               required
               onChange={props.handleFieldChange}
               id="gender"
-              placeholder="Gender"
               value={props.householdMember.gender}
-            />
+            >
+              <option value="">Select</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
           </div>
           <div className="form">
             <label htmlFor="dob">DOB:</label>

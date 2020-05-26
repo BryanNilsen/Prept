@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import APIManager from "../../modules/APIManager";
 import Calculations from "../../modules/Calculations";
+import Button from "../buttons/Button";
 
 function FoodCard(props) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -64,15 +65,16 @@ function FoodCard(props) {
           <span className="smaller">cal.</span>
         </div>
         <div className="edit-delete_btns">
-          <button
+          <Button
+            text="edit"
             className="edit"
-            onClick={() => props.history.push(`/food/edit/${food.id}`)}
-          >
-            edit
-          </button>
-          <button className="delete" onClick={() => deleteFood(food.id)}>
-            delete
-          </button>
+            callback={() => props.history.push(`/food/edit/${food.id}`)}
+          />
+          <Button
+            text="delete"
+            className="delete"
+            callback={() => deleteFood(food.id)}
+          />
         </div>
       </section>
     </>
