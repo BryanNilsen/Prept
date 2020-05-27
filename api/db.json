@@ -446,15 +446,39 @@
   "supplies": [
     {
       "id": 1,
+      "userId": 1,
       "categoryId": 1,
-      "name": "Lysol",
-      "qty": 1
+      "name": "Lysol - Spray",
+      "qty": 1,
+      "size": "14oz",
+      "expDate": null
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "categoryId": 2,
+      "name": "Charmin",
+      "qty": 12,
+      "size": "200 sheets",
+      "expDate": null
     }
   ],
   "categories": [
     {
       "id": 1,
       "name": "cleaner/disinfectant"
+    },
+    {
+      "id": 2,
+      "name": "paper goods"
+    },
+    {
+      "id": 3,
+      "name": "prescription medicine"
+    },
+    {
+      "id": 4,
+      "name": "hygiene"
     }
   ]
 }

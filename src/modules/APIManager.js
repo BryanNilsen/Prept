@@ -16,13 +16,20 @@ const APIManager = {
   },
   getUserWithAllData(id) {
     return fetch(
-      `${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters&_embed=foods&_embed=supplies`
-    ).then((response) => response.json());
-    // .then((user) => {
-    //   delete user.password;
-    //   delete user.email;
-    //   return user;
-    // });
+      `${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters&_embed=foods`
+    )
+      .then((response) => response.json())
+      .then((user) => {
+        return fetch(`${APIUrl}/supplies?userId=${id}&_expand=category`)
+          .then((response) => response.json())
+          .then((supplies) => {
+            supplies.forEach(
+              (supply) => (supply.category = supply.category.name)
+            );
+            user.supplies = supplies;
+            return user;
+          });
+      });
   },
   getUserByEmail(email) {
     let lowerEmail = email.toLowerCase();
