@@ -4,10 +4,18 @@ const APIManager = {
   getUsers() {
     return fetch(`${APIUrl}/users`).then((response) => response.json());
   },
+  getResource(resource) {
+    return fetch(`${APIUrl}/${resource}`).then((response) => response.json());
+  },
   getResourceById(resource, id) {
     return fetch(`${APIUrl}/${resource}/${id}`).then((response) =>
       response.json()
     );
+  },
+  getResourceByIdWithExpand(resource, id, expand) {
+    return fetch(
+      `${APIUrl}/${resource}?userId=${id}&_expand=${expand}`
+    ).then((response) => response.json());
   },
   getUserWithHousehold(id) {
     return fetch(
@@ -16,18 +24,15 @@ const APIManager = {
   },
   getUserWithAllData(id) {
     return fetch(
-      `${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters&_embed=foods`
+      `${APIUrl}/users/${id}?_embed=householdMembers&_embed=waters&_embed=foods&_embed=supplies`
     )
       .then((response) => response.json())
-      .then((user) => {
+      .then((results) => {
         return fetch(`${APIUrl}/supplies?userId=${id}&_expand=category`)
-          .then((response) => response.json())
+          .then((res) => res.json())
           .then((supplies) => {
-            supplies.forEach(
-              (supply) => (supply.category = supply.category.name)
-            );
-            user.supplies = supplies;
-            return user;
+            results.supplies = supplies;
+            return results;
           });
       });
   },

@@ -18,10 +18,18 @@ const Navbar = (props) => {
         </div>
       </NavLink>
       <div className="navlinks">
-        <NavLink to="/household">Household</NavLink>
-        <NavLink to="/food">Food</NavLink>
-        <NavLink to="/water">Water</NavLink>
-        <NavLink to="/supplies">Supplies</NavLink>
+        <NavLink to="/household" activeClassName="activeLink">
+          Household
+        </NavLink>
+        <NavLink to="/food" activeClassName="activeLink">
+          Food
+        </NavLink>
+        <NavLink to="/water" activeClassName="activeLink">
+          Water
+        </NavLink>
+        <NavLink to="/supplies" activeClassName="activeLink">
+          Supplies
+        </NavLink>
       </div>
       <button className="btn-pink" onClick={handleLogout}>
         Logout

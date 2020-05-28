@@ -96,6 +96,11 @@ nav a {
   opacity: 1;
 }
 
+a.activeLink {
+  color: var(--primary-white);
+  opacity: 1;
+}
+
 .logo_nav {
   color: var(--primary-white);
   margin: 0;

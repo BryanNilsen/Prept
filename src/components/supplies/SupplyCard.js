@@ -25,7 +25,6 @@ function SupplyCard(props) {
     if (supply.expDate === null) {
       return "";
     }
-
     if (Calculations.isExpired(supply)) {
       status += " expired";
     }
@@ -41,21 +40,23 @@ function SupplyCard(props) {
       <section className="card household_card" onClick={() => handleExpand()}>
         <div className="food_details">
           <div className={dateStatus(supply)}>
-            <strong>{supply.name}</strong>
+            <strong>{supply.name}</strong> - <em>{supply.brand}</em>
           </div>
           {isExpanded && (
             <>
+              <div className="card_status">{supply.category.name}</div>
               <div className="card_status">
-                {supply.qty} x {supply.oz}
+                {supply.qty} x {supply.size}
               </div>
-              <div className="card_status">info</div>
-              <div className="card_status">info</div>
-              <div className={dateStatus(supply)}>
-                {Calculations.isExpiring(supply) && "EXPIRING SOON: "}
-                {Calculations.isExpired(supply) && "EXPIRED: "}
-                {dateStatus(supply) === "" && "expires: "}
-                {convertedDate}
-              </div>
+
+              {supply.expDate != null && (
+                <div className={dateStatus(supply)}>
+                  {Calculations.isExpiring(supply) && "EXPIRING SOON: "}
+                  {Calculations.isExpired(supply) && "EXPIRED: "}
+                  {dateStatus(supply) === "" && "expires: "}
+                  {convertedDate}
+                </div>
+              )}
             </>
           )}
         </div>

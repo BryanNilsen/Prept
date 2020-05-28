@@ -448,7 +448,8 @@
       "id": 1,
       "userId": 1,
       "categoryId": 1,
-      "name": "Lysol - Spray",
+      "brand": "Lysol",
+      "name": "Spray",
       "qty": 1,
       "size": "14oz",
       "expDate": null
@@ -457,28 +458,67 @@
       "id": 2,
       "userId": 1,
       "categoryId": 2,
-      "name": "Charmin",
+      "brand": "Charmin",
+      "name": "Toilet Paper",
       "qty": 12,
       "size": "200 sheets",
       "expDate": null
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "categoryId": 2,
+      "brand": "Brawny",
+      "name": "Paper Towels",
+      "qty": 12,
+      "size": "200 sheets",
+      "expDate": null
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "categoryId": 3,
+      "brand": "CVS",
+      "name": "Amoxicillin",
+      "qty": 1,
+      "size": "6oz",
+      "expDate": "2020-07-09"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "categoryId": 5,
+      "brand": "3M",
+      "name": "Mask",
+      "qty": 1,
+      "size": "adult",
+      "expDate": "2024-07-09"
     }
   ],
   "categories": [
     {
       "id": 1,
-      "name": "cleaner/disinfectant"
+      "name": "Cleaner/Disinfectant"
     },
     {
       "id": 2,
-      "name": "paper goods"
+      "name": "Paper Goods"
     },
     {
       "id": 3,
-      "name": "prescription medicine"
+      "name": "Prescriptions"
+    },
+    {
+      "id": 3,
+      "name": "OTC - Medication"
     },
     {
       "id": 4,
-      "name": "hygiene"
+      "name": "Hygiene"
+    },
+    {
+      "id": 5,
+      "name": "PPE"
     }
   ]
 }
