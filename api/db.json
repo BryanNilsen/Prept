@@ -478,7 +478,7 @@
       "id": 4,
       "userId": 1,
       "categoryId": 3,
-      "brand": "CVS",
+      "brand": "Generic",
       "name": "Amoxicillin",
       "qty": 1,
       "size": "6oz",
@@ -486,6 +486,16 @@
     },
     {
       "id": 5,
+      "userId": 1,
+      "categoryId": 3,
+      "brand": "Generic",
+      "name": "Albuterol",
+      "qty": 1,
+      "size": "6oz",
+      "expDate": "2020-07-09"
+    },
+    {
+      "id": 6,
       "userId": 1,
       "categoryId": 5,
       "brand": "3M",

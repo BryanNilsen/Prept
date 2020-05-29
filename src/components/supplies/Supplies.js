@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import SuppliesHeader from "./SuppliesHeader";
-import APIManager from "../../modules/APIManager";
 import Button from "../buttons/Button";
 import SupplyCard from "./SupplyCard";
 
@@ -16,7 +15,6 @@ const Supplies = (props) => {
     const supplyFilter = [...user.supplies];
     const eventId = parseInt(evt.target.value);
     if (eventId !== 0) {
-      console.log(eventId);
       const sorted = supplyFilter.filter(
         (supply) => supply.categoryId === eventId
       );
