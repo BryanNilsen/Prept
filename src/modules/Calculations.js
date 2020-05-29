@@ -81,14 +81,14 @@ const Calculations = {
     const days = Math.floor(foodTotal / foodNeededPerDay);
     return !isNaN(days) ? days : 0;
   },
-  isExpired(food) {
+  isExpired(item) {
     const today = new Date();
-    const expDate = new Date(food.expDate);
+    const expDate = new Date(item.expDate);
     return expDate < today;
   },
-  isExpiring(food) {
+  isExpiring(item) {
     const today = new Date();
-    const expDate = new Date(food.expDate);
+    const expDate = new Date(item.expDate);
     return today < expDate && expDate < this.addDays(today, 20);
   },
   addDays(date, days) {
