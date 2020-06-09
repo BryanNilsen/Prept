@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import APIManager from "../../modules/APIManager";
 
-function FoodForm(props) {
+function SupplyForm(props) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    APIManager.getResource("categories").then((cats) => setCategories(cats));
+  }, []);
+
   return (
     <div className="login_form_container">
       <form className="login_form">
-        <h2>{props.isEdit ? "Edit" : "Add"} Food Item</h2>
+        <h2>{props.isEdit ? "Edit" : "Add"} Supply Item</h2>
         <div className="form">
           {/* NAME INPUT */}
           <label htmlFor="name">Name:</label>
@@ -15,7 +22,7 @@ function FoodForm(props) {
             onChange={props.handleFieldChange}
             id="name"
             placeholder="Name"
-            value={props.food.name}
+            value={props.supply.name}
           />
         </div>
         <div className="form">
@@ -28,7 +35,7 @@ function FoodForm(props) {
             onChange={props.handleFieldChange}
             id="brand"
             placeholder="Brand"
-            value={props.food.brand}
+            value={props.supply.brand}
           />
         </div>
         {/* QUANTITY INPUT */}
@@ -41,46 +48,20 @@ function FoodForm(props) {
             onChange={props.handleFieldChange}
             id="qty"
             placeholder="quantity"
-            value={props.food.qty}
+            value={props.supply.qty}
           />
         </div>
-        {/* OUNCES INPUT */}
+        {/* SIZE INPUT */}
         <div className="form">
-          <label htmlFor="oz">Ounces:</label>
+          <label htmlFor="size">Size:</label>
           <input
             className="form_inputs"
             type="text"
             required
             onChange={props.handleFieldChange}
-            id="oz"
-            placeholder="ounces"
-            value={props.food.oz}
-          />
-        </div>
-        {/* SERVINGS INPUT */}
-        <div className="form">
-          <label htmlFor="servings">Servings:</label>
-          <input
-            className="form_inputs"
-            type="text"
-            required
-            onChange={props.handleFieldChange}
-            id="servings"
-            placeholder="number or servings"
-            value={props.food.servings}
-          />
-        </div>
-        {/* CALORIES INPUT */}
-        <div className="form">
-          <label htmlFor="servings">Calories Per Serving:</label>
-          <input
-            className="form_inputs"
-            type="text"
-            required
-            onChange={props.handleFieldChange}
-            id="calPerServing"
-            placeholder="calories per serving"
-            value={props.food.calPerServing}
+            id="size"
+            placeholder="size"
+            value={props.supply.size}
           />
         </div>
         {/* EXPIRATION DATE INPUT */}
@@ -93,28 +74,32 @@ function FoodForm(props) {
             onChange={props.handleFieldChange}
             id="expDate"
             placeholder="expiration date"
-            value={props.food.expDate}
+            value={props.supply.expDate}
           />
         </div>
-        {/* CONTAINER INPUT */}
-        <div className="form">
-          <label htmlFor="container">Container Type:</label>
-          <input
-            className="form_inputs"
-            type="text"
-            required
-            onChange={props.handleFieldChange}
-            id="container"
-            placeholder="bottle, can, etc."
-            value={props.food.container}
-          />
-        </div>
+
+        {/* CATEGORY */}
+        {/* SELECT MENU */}
+        <select
+          id="categoryId"
+          className="form_inputs"
+          value={props.supply.categoryId}
+          onChange={props.handleFieldChange}
+        >
+          <option value="">Select Category</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+
         {/* SUBMIT */}
         <button
           type="button"
           className="btn-pink"
           disabled={props.isLoading}
-          onClick={props.addEditFood}
+          onClick={props.addEditSupply}
         >
           {props.isEdit ? "Edit" : "Add"}
         </button>
@@ -123,4 +108,4 @@ function FoodForm(props) {
   );
 }
 
-export default FoodForm;
+export default SupplyForm;

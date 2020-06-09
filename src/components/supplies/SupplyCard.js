@@ -17,8 +17,9 @@ function SupplyCard(props) {
   };
 
   // move this to calculations for universal access
-  const expDate = new Date(supply.expDate);
-  const convertedDate = new Intl.DateTimeFormat("en-US").format(expDate);
+  const expDate = supply.expDate !== "" ? new Date(supply.expDate) : null;
+  const convertedDate =
+    expDate !== null ? new Intl.DateTimeFormat("en-US").format(expDate) : null;
 
   function dateStatus(supply) {
     let status = "";
@@ -54,7 +55,7 @@ function SupplyCard(props) {
                   {Calculations.isExpiring(supply) && "EXPIRING SOON: "}
                   {Calculations.isExpired(supply) && "EXPIRED: "}
                   {dateStatus(supply) === "" && "expires: "}
-                  {convertedDate}
+                  {convertedDate !== null ? convertedDate : "never"}
                 </div>
               )}
             </>
@@ -68,7 +69,7 @@ function SupplyCard(props) {
           <Button
             text="edit"
             className="edit"
-            callback={() => props.history.push(`/food/edit/${supply.id}`)}
+            callback={() => props.history.push(`/supplies/edit/${supply.id}`)}
           />
           <Button
             text="delete"
