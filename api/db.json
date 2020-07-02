@@ -497,22 +497,12 @@
     {
       "id": 6,
       "userId": 1,
-      "categoryId": 5,
+      "categoryId": 6,
       "brand": "3M",
       "name": "Mask",
       "qty": 1,
       "size": "adult",
       "expDate": "2024-07-09"
-    },
-    {
-      "userId": 1,
-      "name": "test 2",
-      "brand": "2",
-      "qty": 2,
-      "size": "2",
-      "expDate": "2025-06-25",
-      "categoryId": 2,
-      "id": 7
     }
   ],
   "categories": [
