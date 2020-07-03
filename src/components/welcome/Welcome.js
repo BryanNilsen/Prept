@@ -89,7 +89,8 @@ function Welcome(props) {
             )}
           </div>
         </section>
-        <section id="supplies_card" className="card welcome_card">
+
+        {/* <section id="supplies_card" className="card welcome_card">
           <h3>4</h3>
           <p>
             Add supplies such as medicine, toiletries, cleaning products. etc.
@@ -108,7 +109,8 @@ function Welcome(props) {
               </>
             )}
           </div>
-        </section>
+        </section> */}
+
         {/* end inventory cards */}
       </div>
     </>

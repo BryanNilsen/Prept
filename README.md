@@ -41,8 +41,7 @@ Back in your Terminal:
 So far we have cloned this repo, created a new repo and pushed up our copy and you should see the code on GitHub.
 
 launch json server:
-navigate to api directory and launch json-server -p
-5000 -w db.json
+navigate to api directory and launch json-server: `json-server -p 5000 -w db.json`
 
 run app
 npm start to run app

@@ -10,6 +10,7 @@ function Water(props) {
   const [sortedWaters, setSortedWaters] = useState({ waters: [] });
 
   const days = Calculations.calculateDaysOfWaterPerHousehold(props.user);
+  const goalPercentage = Calculations.goalPercentage(days, user.waterGoal);
 
   const handleSort = (evt) => {
     const waterSort = [...user.waters];
@@ -52,24 +53,24 @@ function Water(props) {
         {/* overview */}
         <section className="overview">
           <h3>
-            You've Prept: {/* <span className="tooltip"> */}
-            {Calculations.calculateWaterTotal(
-              user.waters
-            ).toLocaleString()}{" "}
-            ounces ||
-            {/* <span className="tooltiptext"> */}
+            You've Prept:{" "}
+            {Calculations.calculateWaterTotal(user.waters).toLocaleString()}{" "}
+            ounces - or -{" "}
             {Calculations.convertOzToGallons(
               Calculations.calculateWaterTotal(user.waters)
             )}{" "}
             gallons
-            {/* </span> */}
-            {/* </span> */}
           </h3>
           <h4>
-            Your household of has enough water for approximately{" "}
-            {!isNaN(days) ? days : "0"} day
+            That's enough water for approximately {!isNaN(days) ? days : "0"}{" "}
+            day
             {days > 1 && "s"} for {user.householdMembers.length}{" "}
-            {user.householdMembers.length > 1 ? "people" : "person"} .
+            {user.householdMembers.length > 1 ? "people" : "person"}.{" "}
+          </h4>
+          <h4>
+            {" "}
+            You are {goalPercentage}% of the way toward your goal of{" "}
+            {user.waterGoal} days.
           </h4>
         </section>
 
