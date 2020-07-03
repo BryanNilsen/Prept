@@ -27,9 +27,9 @@ const Navbar = (props) => {
         <NavLink to="/water" activeClassName="activeLink">
           Water
         </NavLink>
-        <NavLink to="/supplies" activeClassName="activeLink">
+        {/* <NavLink to="/supplies" activeClassName="activeLink">
           Supplies
-        </NavLink>
+        </NavLink> */}
       </div>
       <button className="btn-pink" onClick={handleLogout}>
         Logout

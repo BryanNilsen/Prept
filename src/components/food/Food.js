@@ -131,26 +131,29 @@ const Food = (props) => {
         {/* inventory */}
         <div className="inventory_add">
           <h2>Inventory:</h2>
-          <select onChange={handleSort} id="sort_select">
-            <option value="">Sort</option>
-            <option value="sortAZName">Name A-Z</option>
-            <option value="sortZAName">Name Z-A</option>
-            <option value="sortAZBrand">Brand A-Z</option>
-            <option value="sortZABrand">Brand Z-A</option>
-            <option value="sortCalAsc">Calories Low-High</option>
-            <option value="sortCalDesc">Calories High-Low</option>
-            <option value="sortExpDate">Expiration Date</option>
-          </select>
-          <select onChange={handleFilter} id="filter_select">
-            <option value="">Filter</option>
-            <option value="expired">Expired</option>
-            <option value="expiring">Expiring Soon</option>
-          </select>
-          <input
-            onChange={handleSearch}
-            placeholder="search"
-            id="search_input"
-          />
+          <div>
+            <select onChange={handleSort} id="sort_select">
+              <option value="">Sort</option>
+              <option value="sortAZName">Name A-Z</option>
+              <option value="sortZAName">Name Z-A</option>
+              <option value="sortAZBrand">Brand A-Z</option>
+              <option value="sortZABrand">Brand Z-A</option>
+              <option value="sortCalAsc">Calories Low-High</option>
+              <option value="sortCalDesc">Calories High-Low</option>
+              <option value="sortExpDate">Expiration Date</option>
+            </select>
+            <select onChange={handleFilter} id="filter_select">
+              <option value="">Filter</option>
+              <option value="expired">Expired</option>
+              <option value="expiring">Expiring Soon</option>
+            </select>
+            <input
+              onChange={handleSearch}
+              placeholder="search"
+              id="search_input"
+              size="12"
+            />
+          </div>
           <button
             className="btn-pink"
             onClick={() => {
