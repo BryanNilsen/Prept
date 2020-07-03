@@ -452,7 +452,7 @@
       "name": "Spray",
       "qty": 1,
       "size": "14oz",
-      "expDate": null
+      "expDate": ""
     },
     {
       "id": 2,
@@ -462,7 +462,7 @@
       "name": "Toilet Paper",
       "qty": 12,
       "size": "200 sheets",
-      "expDate": null
+      "expDate": ""
     },
     {
       "id": 3,
@@ -472,7 +472,7 @@
       "name": "Paper Towels",
       "qty": 12,
       "size": "200 sheets",
-      "expDate": null
+      "expDate": ""
     },
     {
       "id": 4,
@@ -497,7 +497,7 @@
     {
       "id": 6,
       "userId": 1,
-      "categoryId": 5,
+      "categoryId": 6,
       "brand": "3M",
       "name": "Mask",
       "qty": 1,
@@ -519,15 +519,15 @@
       "name": "Prescriptions"
     },
     {
-      "id": 3,
+      "id": 44,
       "name": "OTC - Medication"
     },
     {
-      "id": 4,
+      "id": 5,
       "name": "Hygiene"
     },
     {
-      "id": 5,
+      "id": 6,
       "name": "PPE"
     }
   ]

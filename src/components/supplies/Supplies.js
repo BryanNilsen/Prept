@@ -28,6 +28,28 @@ const Supplies = (props) => {
     });
   };
 
+  const handleSort = (evt) => {
+    const supplySort = [...user.supplies];
+    const eventId = evt.target.value;
+    if (eventId === "sortAZName") {
+      setSortedSupplies({
+        supplies: supplySort.sort((a, b) => a.name.localeCompare(b.name)),
+      });
+    }
+    if (eventId === "sortZAName") {
+      setSortedSupplies({
+        supplies: supplySort.sort((a, b) => b.name.localeCompare(a.name)),
+      });
+    }
+    if (eventId === "sortAZCategory") {
+      setSortedSupplies({
+        supplies: supplySort.sort((a, b) =>
+          a.category.name.localeCompare(b.category.name)
+        ),
+      });
+    }
+  };
+
   useEffect(() => {
     function getCategories() {
       var flags = {};
@@ -63,7 +85,7 @@ const Supplies = (props) => {
         {/* inventory */}
         <div className="inventory_add">
           <h2>Inventory:</h2>
-          <select>
+          <select id="sort_select" onChange={handleSort}>
             <option value="">sort / reset</option>
             <option value="sortAZName">Name A-Z</option>
             <option value="sortZAName">Name Z-A</option>

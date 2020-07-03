@@ -12,6 +12,7 @@ import Welcome from "./welcome/Welcome";
 import Food from "./food/Food";
 import FoodAddEdit from "./food/FoodAddEdit";
 import Supplies from "./supplies/Supplies";
+import SupplyAddEdit from "./supplies/SupplyAddEdit";
 
 const AppViews = (props) => {
   const setIsAuthenticated = props.setIsAuthenticated;
@@ -179,6 +180,38 @@ const AppViews = (props) => {
             props.history.replace("/login")
           ) : (
             <Supplies user={user} getUserData={getUserData} {...props} />
+          )
+        }
+      />
+      <Route
+        exact
+        path="/supplies/new"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <SupplyAddEdit
+              user={user}
+              getUserData={getUserData}
+              {...props}
+              isEdit={false}
+            />
+          )
+        }
+      />
+      <Route
+        exact
+        path="/supplies/edit/:supplyId(\d+)"
+        render={(props) =>
+          !isAuthenticated ? (
+            props.history.replace("/login")
+          ) : (
+            <SupplyAddEdit
+              user={user}
+              getUserData={getUserData}
+              {...props}
+              isEdit={true}
+            />
           )
         }
       />

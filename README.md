@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Prept
 
-## Available Scripts
+Prept was created in the early stages of the Covid-19 pandemic. I quickly found myself in a worst-case-scenario mindset and began prepping for the imminent shelter-at-home order coming down from the powers that be. The only problem was… I didn’t know how much I needed to prep to provide for my family.
 
-In the project directory, you can run:
+Prept allows a user to enter some basic vital info about their household members. From there, the app calculates minimum daily water and caloric intake needs for each member and then provides those totals as a baseline guide when hitting the local grocery store.
 
-### `npm start`
+## App Visuals
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Data Relationships
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Prept Entity Relationship Diagram](/src/images/prept-ERD.png)
 
-### `npm test`
+# How to Use this Repo:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+From your terminal:
 
-### `npm run build`
+1. Clone this repo: `git@github.com:BryanNilsen/Prept.git`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. navigate to the Prept root directory: `cd Prept`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+3. Install dependencies: `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Remove path to this repository: `git remote rm origin`
 
-### `npm run eject`
+## Create a New Repo in Your GitHub Account
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+From your browser:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. [Create your own repository on GitHub](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+6. After creating the repository, copy the repo URL ( _this example uses SSH_ )
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Push This Cloned Repo to Your New Repo
 
-## Learn More
+Back in your Terminal:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+7. Add the URL to your repo: `git remote add origin git@github.com:{your GH username}/{name of your repo}.git`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+8. Now you can push this cloned repo to the new repo you created under your username: `git push origin master`
 
-### Code Splitting
+So far we have cloned this repo, created a new repo and pushed up our copy and you should see the code on GitHub.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+launch json server:
+navigate to api directory and launch json-server -p
+5000 -w db.json
 
-### Analyzing the Bundle Size
+run app
+npm start to run app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+\*\* current version of this app was built with faux authentication
 
-### Making a Progressive Web App
+\*\* no css libraries/frameworks were implemented in this version
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
