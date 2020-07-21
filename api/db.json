@@ -12,7 +12,7 @@
       "id": 1,
       "username": "bryan",
       "email": "bryan@bryan.com",
-      "password": "bryan",
+      "password": "Bryan",
       "waterGoal": 14,
       "foodGoal": 21
     },
@@ -46,7 +46,7 @@
     },
     {
       "userId": 1,
-      "name": "Tally",
+      "name": "Max",
       "dob": "2010-09-15",
       "weight": 72,
       "height": 54,
@@ -55,7 +55,7 @@
     },
     {
       "userId": 1,
-      "name": "Tiny",
+      "name": "Sissy",
       "dob": "2012-04-09",
       "weight": 62,
       "height": 51,

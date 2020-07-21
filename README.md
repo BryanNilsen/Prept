@@ -6,9 +6,11 @@ Prept allows a user to enter some basic vital info about their household members
 
 ## App Visuals
 
+![Prept Mobile Views](./src/images/prept-mobile-views.png)
+
 ## Data Relationships
 
-![Prept Entity Relationship Diagram](/src/images/prept-ERD.png)
+![Prept Entity Relationship Diagram](./src/images/prept-ERD.png)
 
 # How to Use this Repo:
 
